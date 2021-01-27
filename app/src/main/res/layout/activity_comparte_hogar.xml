@@ -12,7 +12,8 @@
         android:layout_height="46dp"
         android:layout_marginTop="24dp"
         app:layout_constraintStart_toEndOf="@id/chip6"
-        app:layout_constraintTop_toBottomOf="@+id/tv_direccion" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_direccion"
+        android:text="@string/Social" />
 
     <com.google.android.material.chip.Chip
         android:id="@+id/chip6"
@@ -21,12 +22,13 @@
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/chip4" />
+        app:layout_constraintTop_toTopOf="@+id/chip4"
+        android:text="@string/Hogar" />
 
-    <TextView
+    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/tv_direccion"
-        android:layout_width="166dp"
-        android:layout_height="26dp"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
         android:layout_marginTop="24dp"
         android:gravity="center_horizontal"
         android:hint="Ingrese su dirección"
@@ -42,12 +44,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/TituloVentanaComparteHogar" />
+        android:text="@string/TituloVentanaComparteHogar" />
 
     <com.google.android.material.chip.Chip
         android:id="@+id/chip7"
@@ -56,7 +57,8 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/chip4"
-        app:layout_constraintTop_toTopOf="@+id/chip4" />
+        app:layout_constraintTop_toTopOf="@+id/chip4"
+        android:text="@string/Otros" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -73,13 +75,16 @@
         app:layout_constraintGuide_percent="0.1" />
 
     <TableLayout
-        android:layout_width="0dp"
-        android:layout_height="565dp"
-
+        android:id="@+id/tableLayout"
+        android:layout_width="328dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonComparte"
         app:layout_constraintEnd_toEndOf="@id/guideline"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/chip4"
-        tools:layout_editor_absoluteX="16dp">
+        app:layout_constraintVertical_bias="0.0">
 
         <TableRow
             android:layout_width="match_parent"
@@ -88,23 +93,111 @@
             <ImageView
                 android:id="@+id/imageView2"
                 android:layout_width="164dp"
-                android:layout_height="100dp"
+                android:layout_height="170dp"
                 app:srcCompat="@drawable/ic_android_black_24dp"
                 tools:ignore="VectorDrawableCompat" />
 
             <ImageView
                 android:id="@+id/imageView2"
                 android:layout_width="165dp"
-                android:layout_height="100dp"
+                android:layout_height="170dp"
                 app:srcCompat="@drawable/ic_android_black_24dp"
                 tools:ignore="DuplicateIds,VectorDrawableCompat" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textAlignment="center"
+                android:text="@string/Cocina"></TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textAlignment="center"
+                android:text="@string/Bricolaje"></TextView>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="164dp"
+                android:layout_height="170dp"
+                app:srcCompat="@drawable/ic_android_black_24dp"
+                tools:ignore="DuplicateIds,VectorDrawableCompat" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="165dp"
+                android:layout_height="170dp"
+                app:srcCompat="@drawable/ic_android_black_24dp"
+                tools:ignore="DuplicateIds,VectorDrawableCompat" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textAlignment="center"
+                android:text="@string/Jardin"></TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textAlignment="center"
+                android:text="@string/Mecanica"></TextView>
+        </TableRow>
 
 
     </TableLayout>
+
+    <Button
+        android:id="@+id/buttonComparte"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="5dp"
+        android:text="@string/TituloVentanaComparteHogar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        tools:layout_editor_absoluteY="658dp" />
+
+    <Button
+        android:id="@+id/buttonSiguiente"
+        android:layout_width="20dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonComparte"
+        tools:layout_editor_absoluteY="658dp" />
+
+    <Button
+        android:id="@+id/buttonAnterior"
+        android:layout_width="20dp"
+        android:layout_height="60dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonComparte"
+
+        tools:layout_editor_absoluteY="658dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

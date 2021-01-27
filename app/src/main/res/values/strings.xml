@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">Communify</string>
     <string name="TituloVentanaComparteHogar">Comparte</string>
+    <string name="Hogar">Hogar</string>
+    <string name="Social">Social</string>
+    <string name="Otros">Otros</string>
+    <string name="Cocina">Cocina</string>
+    <string name="Bricolaje">Bricolaje</string>
+    <string name="Jardin">Jardin</string>
+    <string name="Mecanica">Mecanica</string>
 </resources>
