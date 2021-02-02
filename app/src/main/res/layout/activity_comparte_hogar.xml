@@ -10,20 +10,21 @@
         android:id="@+id/chip4"
         android:layout_width="83dp"
         android:layout_height="46dp"
+        android:layout_marginLeft="5dp"
         android:layout_marginTop="24dp"
+        android:text="@string/Social"
         app:layout_constraintStart_toEndOf="@id/chip6"
-        app:layout_constraintTop_toBottomOf="@+id/tv_direccion"
-        android:text="@string/Social" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_direccion" />
 
     <com.google.android.material.chip.Chip
         android:id="@+id/chip6"
         android:layout_width="83dp"
         android:layout_height="46dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:text="@string/Hogar"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/chip4"
-        android:text="@string/Hogar" />
+        app:layout_constraintTop_toTopOf="@+id/chip4" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/tv_direccion"
@@ -44,21 +45,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        android:text="@string/TituloVentanaComparteHogar"
+        android:textSize="23dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:text="@string/TituloVentanaComparteHogar" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.chip.Chip
         android:id="@+id/chip7"
         android:layout_width="83dp"
         android:layout_height="46dp"
+        android:layout_marginLeft="5dp"
+        android:text="@string/Otros"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/chip4"
-        app:layout_constraintTop_toTopOf="@+id/chip4"
-        android:text="@string/Otros" />
+        app:layout_constraintTop_toTopOf="@+id/chip4" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -113,15 +116,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:textAlignment="center"
-                android:text="@string/Cocina"></TextView>
+                android:text="@string/Cocina"
+                android:textAlignment="center"></TextView>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:textAlignment="center"
-                android:text="@string/Bricolaje"></TextView>
+                android:text="@string/Bricolaje"
+                android:textAlignment="center"></TextView>
 
         </TableRow>
 
@@ -152,25 +155,26 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:textAlignment="center"
-                android:text="@string/Jardin"></TextView>
+                android:text="@string/Jardin"
+                android:textAlignment="center"></TextView>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:textAlignment="center"
-                android:text="@string/Mecanica"></TextView>
+                android:text="@string/Mecanica"
+                android:textAlignment="center"></TextView>
         </TableRow>
 
 
     </TableLayout>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonComparte"
         android:layout_width="150dp"
         android:layout_height="60dp"
         android:layout_marginBottom="5dp"
+        android:background="@drawable/forma_botones"
         android:text="@string/TituloVentanaComparteHogar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
@@ -179,25 +183,22 @@
 
     <Button
         android:id="@+id/buttonSiguiente"
-        android:layout_width="20dp"
+        android:layout_width="40dp"
         android:layout_height="60dp"
         android:layout_marginLeft="5dp"
         android:layout_marginBottom="5dp"
-        android:text="Button"
+        android:alpha="0.5"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/buttonComparte"
-        tools:layout_editor_absoluteY="658dp" />
+        app:layout_constraintStart_toEndOf="@+id/buttonComparte" />
 
     <Button
         android:id="@+id/buttonAnterior"
-        android:layout_width="20dp"
+        android:layout_width="40dp"
         android:layout_height="60dp"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="5dp"
-        android:text="Button"
+        android:alpha="0.5"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonComparte"
-
-        tools:layout_editor_absoluteY="658dp" />
+        app:layout_constraintEnd_toStartOf="@+id/buttonComparte" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
