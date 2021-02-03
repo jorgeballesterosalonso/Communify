@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="secondarylight">#8A0A06</color><!--    -->
+    <color name="primarydark">#006D66</color><!--    -->
+    <color name="secondarydark">#C63D37</color><!--   -->
+
+    <!--Colores pricipales, botones, pantalla, fondos, textos -->
+    <color name="Communify_Fondo_pantalla">#59CDC4</color> <!-- Fondo de pantalla Splash / Letras Chips  -->
+    <color name="Communify_BotonesPrincipales">#FF6F61</color><!-- Botones principales  -->
+    <color name="Communify_Fondo_labels_85">#D959CDC4</color> <!-- Fondos direccion  -->
+    <color name="Communify_White">#FFFFFF</color><!-- Blanco  -->
+    <color name="Communify_Black">#000000</color><!-- Negro -->
+    <color name="Communify_Textos_teal">#FF03DAC5</color>
+    <color name="Communify_Bar">#149C94</color><!--   -->
+    <color name="Communify_textos_oscuros">#0A6863</color><!--   -->
+
 </resources>

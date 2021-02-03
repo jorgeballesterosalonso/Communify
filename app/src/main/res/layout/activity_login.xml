@@ -1,99 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <androidx.constraintlayout.widget.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout
 
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline2"
-            android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="343dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="347dp" />
+
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="199dp"
+        android:layout_height="115dp"
+        android:layout_marginTop="84dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/usernameTIL"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="63dp"
+        android:alpha="0.8"
+        android:hint="Username"
+        app:hintTextColor="@color/Communify_textos_oscuros"
+        app:counterTextColor="@color/Communify_textos_oscuros"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        app:layout_constraintStart_toStartOf="@id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        android:textColorHint="@color/Communify_textos_oscuros"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="343dp" />
+            android:background="@color/Communify_White"
+            android:textColor="@color/Communify_Textos_teal"
+            android:textColorHint="#FFFFFF"
+            android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_end="347dp" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passworldTIL"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:alpha="0.8"
+        android:hint="Password"
+        app:hintTextColor="@color/Communify_textos_oscuros"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        app:layout_constraintStart_toStartOf="@id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/usernameTIL"
+        android:textColorHint="@color/Communify_textos_oscuros">
 
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textStyle="bold"
+            android:background="@color/Communify_White"
+            android:textColor="@color/Communify_Textos_teal" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="199dp"
-            android:layout_height="115dp"
-            android:layout_marginTop="84dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/logo" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonLog"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="8dp"
+        android:alpha="0.8"
+        android:backgroundTint="@color/Communify_BotonesPrincipales"
+        android:text="Login"
+        android:textColor="@color/Communify_White"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/passworldTIL" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/usernameTIL"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="63dp"
-            android:alpha="0.8"
-            android:background="@android:color/white"
-            android:hint="Username"
-            app:layout_constraintEnd_toEndOf="@id/guideline2"
-            app:layout_constraintStart_toStartOf="@id/guideline3"
-            app:layout_constraintTop_toBottomOf="@+id/imageView3">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@android:color/white" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/passworldTIL"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:alpha="0.8"
-            android:background="@android:color/white"
-            android:hint="Password"
-            app:layout_constraintEnd_toEndOf="@id/guideline2"
-            app:layout_constraintStart_toStartOf="@id/guideline3"
-            app:layout_constraintTop_toBottomOf="@+id/usernameTIL">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@android:color/white" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/buttonLog"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="8dp"
-            android:alpha="0.8"
-            android:backgroundTint="@color/teal_700"
-            android:text="Login"
-            android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="@id/guideline2"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@id/guideline3"
-            app:layout_constraintTop_toBottomOf="@+id/passworldTIL" />
-
-        <TextView
-            android:id="@+id/textViewR"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="572dp"
-            android:text="¿You don´t have an account? Sing up"
-            android:textColor="@color/teal_200"
-            app:layout_constraintEnd_toEndOf="@id/guideline2"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@id/guideline3"
-            app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/textViewR"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="572dp"
+        android:text="¿You don´t have an account? Sing up"
+        android:textColor="@color/Communify_Textos_teal"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/guideline3"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

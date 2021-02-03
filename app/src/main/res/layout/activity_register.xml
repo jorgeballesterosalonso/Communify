@@ -36,7 +36,6 @@
         android:layout_height="48dp"
         android:layout_marginTop="63dp"
         android:alpha="0.8"
-        android:background="@android:color/white"
         android:hint="Nombre y Apellidos"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintStart_toStartOf="@id/guideline3"
@@ -45,6 +44,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             android:background="@android:color/white" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -70,7 +70,7 @@
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:alpha="0.8"
-        android:background="@android:color/white"
+        android:background="@color/Communify_White"
         android:hint="Usuario"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintStart_toStartOf="@id/guideline3"
@@ -79,7 +79,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@android:color/white" />
+            android:background="@color/Communify_White" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -96,7 +96,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@android:color/white" />
+            android:background="@color/Communify_White" />
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonLog"
@@ -105,8 +105,8 @@
         android:layout_marginTop="8dp"
         android:alpha="0.8"
         android:text="Registrarse"
-        android:backgroundTint="@color/teal_700"
-        android:textColor="@color/white"
+        android:backgroundTint="@color/Communify_BotonesPrincipales"
+        android:textColor="@color/Communify_White"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/guideline3"
@@ -117,7 +117,7 @@
         android:layout_height="48dp"
         android:layout_marginTop="572dp"
         android:text="Al registrarte aceptas los terminos y condiciones de Communify"
-        android:textColor="@color/teal_200"
+        android:textColor="@color/Communify_Textos_teal"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@id/guideline3"

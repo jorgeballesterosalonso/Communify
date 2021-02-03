@@ -2,15 +2,33 @@
     <!-- Base application theme. -->
     <style name="Theme.Communify" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorPrimary">@color/Communify_Bar</item>
+        <item name="colorPrimaryVariant">@color/Communify_Bar</item>
+        <item name="colorOnPrimary">@color/Communify_Black</item> <!-- Black  -->
+        <item name="colorAccent">@color/Communify_BotonesPrincipales</item><!-- Botones principales  -->
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSecondary">@color/Communify_Fondo_pantalla</item><!-- Fondo de pantalla Splash / Letras Chips  -->
+        <item name="colorSecondaryVariant">@color/Communify_Fondo_labels_85</item><!-- Fondos direccion  -->
+        <item name="colorOnSecondary">@color/Communify_White</item> <!-- Blanco  -->
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="android:textColor">@color/Communify_Textos_teal</item>
+    </style>
+    <!-- Base application theme. -->
+    <style name="Theme.Communify.SinBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/Communify_Bar</item>
+        <item name="colorPrimaryVariant">@color/Communify_Bar</item>
+        <item name="colorOnPrimary">@color/Communify_White</item> <!-- Blanco  -->
+        <item name="colorAccent">@color/Communify_BotonesPrincipales</item><!-- Botones principales  -->
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/Communify_Fondo_pantalla</item><!-- Fondo de pantalla Splash / Letras Chips  -->
+        <item name="colorSecondaryVariant">@color/Communify_Fondo_labels_85</item><!-- Fondos direccion  -->
+        <item name="colorOnSecondary">@color/Communify_Black</item> <!-- Negro  -->
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="android:textColor">@color/Communify_Textos_teal</item>
     </style>
 </resources>
