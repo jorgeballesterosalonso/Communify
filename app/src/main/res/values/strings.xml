@@ -8,4 +8,5 @@
     <string name="Bricolaje">Bricolaje</string>
     <string name="Jardin">Jardin</string>
     <string name="Mecanica">Mecanica</string>
+    <string name="ingreseDireccion">Ingrese su dirección</string>
 </resources>
