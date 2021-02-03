@@ -97,14 +97,14 @@
                 android:id="@+id/imageView2"
                 android:layout_width="164dp"
                 android:layout_height="170dp"
-                app:srcCompat="@drawable/ic_android_black_24dp"
+                app:srcCompat="@drawable/fondococina"
                 tools:ignore="VectorDrawableCompat" />
 
             <ImageView
                 android:id="@+id/imageView2"
                 android:layout_width="165dp"
                 android:layout_height="170dp"
-                app:srcCompat="@drawable/ic_android_black_24dp"
+                app:srcCompat="@drawable/fotobricolaje"
                 tools:ignore="DuplicateIds,VectorDrawableCompat" />
         </TableRow>
 
@@ -136,14 +136,14 @@
                 android:id="@+id/imageView2"
                 android:layout_width="164dp"
                 android:layout_height="170dp"
-                app:srcCompat="@drawable/ic_android_black_24dp"
+                app:srcCompat="@drawable/fotojardin"
                 tools:ignore="DuplicateIds,VectorDrawableCompat" />
 
             <ImageView
                 android:id="@+id/imageView2"
                 android:layout_width="165dp"
                 android:layout_height="170dp"
-                app:srcCompat="@drawable/ic_android_black_24dp"
+                app:srcCompat="@drawable/fotomecanica"
                 tools:ignore="DuplicateIds,VectorDrawableCompat" />
         </TableRow>
 
@@ -175,6 +175,7 @@
         android:layout_height="60dp"
         android:layout_marginBottom="5dp"
         android:background="@drawable/forma_botones"
+        app:backgroundTintMode="screen"
         android:text="@string/TituloVentanaComparteHogar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
