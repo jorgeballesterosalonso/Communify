@@ -83,7 +83,7 @@ public class Splash extends AppCompatActivity {
             @Override
             public void run() {
                 Intent intent = new Intent(Splash
-                        .this, MainActivity.class); //Cambiar aqui para que pase a la nueva pantalla
+                        .this, LoginActivity.class); //Cambiar aqui para que pase a la nueva pantalla
                 startActivity(intent);
                 finish();
             }
