@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.animation.Animation;
@@ -24,15 +25,22 @@ import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
  * @see layout\activity_splash.xml
  */
 public class Splash extends AppCompatActivity {
-
+    private MediaPlayer mediaplayer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         /**
+         * @apiNote se declara el sonido
+         */
+        mediaplayer = MediaPlayer.create(this, R.raw.tonoinicicommunify);
+        /**
          * Llamada al metodo para cambiar de forma automatica de pantalla
          * poner True/False segun se requiera.
          * @see Metodo openApp
+         */
+        /**
+         * metodo inicia la app
          */
         openApp(true);
         /**
@@ -44,12 +52,12 @@ public class Splash extends AppCompatActivity {
         Animation animacionAlpha = AnimationUtils.loadAnimation(this, R.anim.alpha);
         fotoLogo.startAnimation(animacionAlpha);
         Glide.with(this)
-                .load(R.drawable.logotest)
-                .centerCrop()
+                .load(R.drawable.logocommunify)
+                //.centerCrop()
                 .transition(DrawableTransitionOptions.withCrossFade(500))
                 .placeholder(new ColorDrawable(this.getResources() //colo si no carga el logo
                         .getColor(R.color.design_default_color_background))) //color por defecto
-                .circleCrop() //forma de circulo
+                //.circleCrop() //forma de circulo
                 //.getDiskCacheStrategy(DiskCacheStrategy.NONE) //opciones para caches de glide
                 .into(fotoLogo);
 
@@ -78,16 +86,31 @@ public class Splash extends AppCompatActivity {
      *                           cambiar el Intent para selecionar la pantalla a la que cambiara.
      */
     private void openApp(boolean locationPermission) {
+        espera(true);
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
+
                 Intent intent = new Intent(Splash
                         .this, LoginActivity.class); //Cambiar aqui para que pase a la nueva pantalla
                 startActivity(intent);
                 finish();
             }
         }, 8000); //Duracion entre el cambio de pantallas
+    }
+    private void espera(boolean locationPermission) {
+
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                //inicia el sonido
+                mediaplayer.start();
+
+            }
+        }, 1000); //Duracion entre el cambio de pantallas
     }
 
 }
