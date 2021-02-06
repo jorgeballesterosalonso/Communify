@@ -7,24 +7,24 @@
     tools:context=".ComparteHogar">
 
     <com.google.android.material.chip.Chip
-        android:id="@+id/chip4"
+        android:id="@+id/chipSocial"
         android:layout_width="83dp"
         android:layout_height="46dp"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="24dp"
         android:text="@string/Social"
-        app:layout_constraintStart_toEndOf="@id/chip6"
+        app:layout_constraintStart_toEndOf="@id/chipHogar"
         app:layout_constraintTop_toBottomOf="@+id/tv_direccion" />
 
     <com.google.android.material.chip.Chip
-        android:id="@+id/chip6"
+        android:id="@+id/chipHogar"
         android:layout_width="83dp"
         android:layout_height="46dp"
         android:layout_marginStart="35dp"
         android:layout_marginLeft="35dp"
         android:text="@string/Hogar"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/chip4" />
+        app:layout_constraintTop_toTopOf="@+id/chipSocial" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/tv_direccion"
@@ -53,15 +53,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.chip.Chip
-        android:id="@+id/chip7"
+        android:id="@+id/chipOtros"
         android:layout_width="83dp"
         android:layout_height="46dp"
         android:layout_marginLeft="5dp"
         android:text="@string/Otros"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/chip4"
-        app:layout_constraintTop_toTopOf="@+id/chip4" />
+        app:layout_constraintStart_toEndOf="@+id/chipSocial"
+        app:layout_constraintTop_toTopOf="@+id/chipSocial" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -86,7 +86,7 @@
         app:layout_constraintEnd_toEndOf="@id/guideline"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/chip4"
+        app:layout_constraintTop_toBottomOf="@+id/chipSocial"
         app:layout_constraintVertical_bias="0.0">
 
         <TableRow
@@ -94,7 +94,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/fotoCocina"
                 android:layout_width="164dp"
                 android:layout_height="180dp"
                 android:layout_marginRight="5dp"
@@ -103,7 +103,7 @@
                 tools:ignore="VectorDrawableCompat" />
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/fotoBricolaje"
                 android:layout_width="165dp"
                 android:layout_height="180dp"
                 android:layout_marginLeft="5dp"
@@ -141,7 +141,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/fotoJardin"
                 android:layout_width="164dp"
                 android:layout_height="180dp"
                 android:layout_marginRight="5dp"
@@ -150,7 +150,7 @@
                 tools:ignore="DuplicateIds,VectorDrawableCompat" />
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/fotoMecanica"
                 android:layout_width="165dp"
                 android:layout_height="180dp"
                 android:layout_marginLeft="5dp"
@@ -188,13 +188,13 @@
         android:layout_width="150dp"
         android:layout_height="60dp"
         android:layout_marginBottom="5dp"
-        android:background="@drawable/forma_botones"
+        android:backgroundTint="@color/Communify_BotonesPrincipales"
         android:text="@string/TituloVentanaComparteHogar"
+        android:textColor="@color/Communify_White"
         app:backgroundTintMode="screen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        tools:layout_editor_absoluteY="658dp" />
+        app:layout_constraintStart_toStartOf="@+id/guideline2" />
 
     <Button
         android:id="@+id/buttonSiguiente"
