@@ -10,6 +10,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.chip.Chip;
 
+/**
+ * Esta es la clase
+ */
 public class ComparteHogar extends AppCompatActivity {
     ImageView imagenCocina = null;
     ImageView imagenBricolaje = null;
@@ -39,7 +42,6 @@ public class ComparteHogar extends AppCompatActivity {
         imagenMecanica = findViewById(R.id.fotoMecanica);
 
         btnComparte = findViewById(R.id.buttonComparte);
-        btnComparte.setActivated(false);
         btnComparte.setEnabled(false);
         btnAtras = findViewById(R.id.buttonAnterior);
 

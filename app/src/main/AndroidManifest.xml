@@ -11,7 +11,7 @@
         android:theme="@style/Theme.Communify">
         <activity android:name=".RegisterActivity"></activity>
         <activity android:name=".LoginActivity"></activity>
-        <activity android:name=".ComparteHogar"></activity>
+        <activity android:name=".ComparteHogar" android:parentActivityName=".LoginActivity"></activity>
         <activity
             android:name=".Splash"
             android:theme="@style/Theme.Communify.SinBar">
