@@ -13,5 +13,11 @@
     <string name="compartir">Compartir</string>
     <string name="solicitar">Solicitar</string>
     <string name="gracias">Gracias por hacer una sociedad mejor</string>
+    <string name="nombre_apeSingUp">Nombre y Apellidos</string>
+    <string name="Email">Email</string>
+    <string name="PasswordSignUp">Contraseña</string>
+    <string name="UsuarioSignUp">Usuario</string>
+    <string name="BtnRegistrarse">Registrarse</string>
+    <string name="txtSignup">Al registrarte aceptas los terminos y condiciones de Communify</string>
 
 </resources>

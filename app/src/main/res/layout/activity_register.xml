@@ -28,7 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logocommunify" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/nombreyape"
@@ -36,7 +36,7 @@
         android:layout_height="48dp"
         android:layout_marginTop="63dp"
         android:alpha="0.8"
-        android:hint="Nombre y Apellidos"
+        android:hint="@string/nombre_apeSingUp"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintStart_toStartOf="@id/guideline3"
         app:layout_constraintTop_toBottomOf="@+id/imageView3">
@@ -54,7 +54,7 @@
         android:layout_height="48dp"
         android:alpha="0.8"
         android:background="@android:color/white"
-        android:hint="Email"
+        android:hint="@string/Email"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintStart_toStartOf="@id/guideline3"
         app:layout_constraintTop_toBottomOf="@+id/nombreyape">
@@ -71,7 +71,7 @@
         android:layout_height="48dp"
         android:alpha="0.8"
         android:background="@color/Communify_White"
-        android:hint="Usuario"
+        android:hint="@string/UsuarioSignUp"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintStart_toStartOf="@id/guideline3"
         app:layout_constraintTop_toBottomOf="@+id/email">
@@ -88,7 +88,7 @@
         android:layout_height="48dp"
         android:alpha="0.8"
         android:background="@android:color/white"
-        android:hint="Password"
+        android:hint="@string/PasswordSignUp"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintStart_toStartOf="@id/guideline3"
         app:layout_constraintTop_toBottomOf="@+id/usernameTIL">
@@ -104,7 +104,7 @@
         android:layout_height="48dp"
         android:layout_marginTop="8dp"
         android:alpha="0.8"
-        android:text="Registrarse"
+        android:text="@string/BtnRegistrarse"
         android:backgroundTint="@color/Communify_BotonesPrincipales"
         android:textColor="@color/Communify_White"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
@@ -115,12 +115,14 @@
         android:id="@+id/textViewR"
         android:layout_width="0dp"
         android:layout_height="48dp"
-        android:layout_marginTop="572dp"
-        android:text="Al registrarte aceptas los terminos y condiciones de Communify"
+        android:layout_marginTop="560dp"
+        android:text="@string/txtSignup"
+        android:textAlignment="center"
         android:textColor="@color/Communify_Textos_teal"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@id/guideline3"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center_horizontal" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
