@@ -5,7 +5,7 @@
         <item name="colorPrimary">@color/Communify_Bar</item>
         <item name="colorPrimaryVariant">@color/Communify_Bar</item>
         <item name="colorOnPrimary">@color/Communify_White</item> <!-- Blanco  -->
-        <item name="colorAccent">@color/Communify_BotonesPrincipales</item><!-- Botones principales  -->
+        <item name="colorAccent">@color/Communify_BotonesPrincipales</item><!-- Boteson principales  -->
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/Communify_Fondo_pantalla</item><!-- Fondo de pantalla Splash / Letras Chips  -->
         <item name="colorSecondaryVariant">@color/Communify_Fondo_labels_85</item><!-- Fondos direccion  -->

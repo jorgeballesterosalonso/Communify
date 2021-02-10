@@ -12,15 +12,18 @@
         <activity android:name=".RegisterActivity"></activity>
         <activity android:name=".LoginActivity"></activity>
         <activity android:name=".ElectionActivity"></activity>
-        <activity android:name=".ComparteHogar"></activity>
-        <activity
-            android:name=".Splash"
-            android:theme="@style/Theme.Communify.SinBar">
+        <activity android:name=".ComparteHogar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity
+            android:name=".Splash"
+            android:theme="@style/Theme.Communify.SinBar">
+
         </activity>
         <activity android:name=".MainActivity"></activity>
     </application>
