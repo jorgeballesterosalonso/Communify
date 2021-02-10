@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Communify</string>
+    <string name="compartiramor">Share is love</string>
+    <string name="compartir">Compartir</string>
+    <string name="solicitar">Solicitar</string>
+    <string name="gracias">Gracias por hacer una sociedad mejor</string>
 </resources>
