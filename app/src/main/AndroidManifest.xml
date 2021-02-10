@@ -11,6 +11,7 @@
         android:theme="@style/Theme.Communify">
         <activity android:name=".RegisterActivity"></activity>
         <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".ElectionActivity"></activity>
         <activity
             android:name=".Splash"
             android:theme="@style/Theme.Communify.SinBar">
