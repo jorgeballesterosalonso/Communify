@@ -17,8 +17,9 @@
         android:id="@+id/chipSocial"
         android:layout_width="83dp"
         android:layout_height="46dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="8dp"
         android:text="@string/Social"
         android:textColor="@color/Communify_White"
         app:chipBackgroundColor="@color/Communify_Fondo_labels_85"
@@ -29,8 +30,8 @@
         android:id="@+id/chipHogar"
         android:layout_width="83dp"
         android:layout_height="46dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
         android:text="@string/Hogar"
         android:textColor="@color/Communify_White"
         app:chipBackgroundColor="@color/Communify_BotonesPrincipales"
@@ -81,17 +82,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.9" />
+        app:layout_constraintGuide_percent="0.95" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.1" />
+        app:layout_constraintGuide_percent="0.05" />
 
     <TableLayout
         android:id="@+id/tableLayout"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="5dp"
         app:layout_constraintBottom_toTopOf="@+id/buttonComparte"
@@ -106,8 +108,7 @@
             android:layout_height="wrap_content">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="150dp"
-                android:layout_marginRight="5dp"
+                android:layout_width="175dp"
                 android:padding="0dp"
                 app:cardCornerRadius="15dp">
 
@@ -122,7 +123,8 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="150dp"
+                android:layout_width="175dp"
+                android:layout_marginLeft="15dp"
                 app:cardCornerRadius="15dp">
 
                 <ImageView
@@ -163,21 +165,32 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/fotoJardin"
-                android:layout_width="164dp"
-                android:layout_height="180dp"
-                android:layout_marginRight="5dp"
-                android:scaleType="centerCrop"
-                app:srcCompat="@drawable/fotojardin" />
+            <androidx.cardview.widget.CardView
+                android:layout_width="175dp"
+                app:cardCornerRadius="15dp">
 
-            <ImageView
-                android:id="@+id/fotoMecanica"
-                android:layout_width="165dp"
-                android:layout_height="180dp"
-                android:layout_marginLeft="5dp"
-                android:scaleType="centerCrop"
-                app:srcCompat="@drawable/fotomecanica" />
+                <ImageView
+                    android:id="@+id/fotoJardin"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/fotojardin"
+                    tools:ignore="DuplicateIds,VectorDrawableCompat" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="175dp"
+                android:layout_marginLeft="15dp"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:id="@+id/fotoMecanica"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/fotomecanica"
+                    tools:ignore="DuplicateIds,VectorDrawableCompat" />
+            </androidx.cardview.widget.CardView>
         </TableRow>
 
         <TableRow
