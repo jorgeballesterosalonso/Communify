@@ -18,7 +18,6 @@ public class ComparteHogar extends AppCompatActivity {
     ImageView imagenBricolaje = null;
     ImageView imagenJardin = null;
     ImageView imagenMecanica = null;
-
     Button btnComparte = null;
     Button btnAtras = null;
     Chip chipHogar = null;
@@ -46,7 +45,6 @@ public class ComparteHogar extends AppCompatActivity {
         btnAtras = findViewById(R.id.buttonAnterior);
 
         chipHogar = findViewById(R.id.chipHogar);
-        chipHogar.setChecked(true);
 
         /*
          *Creamos los OnClickListener para que el botón de Comparte se active para poder ser presionado

@@ -6,6 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".ComparteHogar">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".5" />
+
     <com.google.android.material.chip.Chip
         android:id="@+id/chipSocial"
         android:layout_width="83dp"
@@ -13,6 +20,8 @@
         android:layout_marginLeft="5dp"
         android:layout_marginTop="10dp"
         android:text="@string/Social"
+        android:textColor="@color/Communify_White"
+        app:chipBackgroundColor="@color/Communify_Fondo_labels_85"
         app:layout_constraintStart_toEndOf="@id/chipHogar"
         app:layout_constraintTop_toBottomOf="@+id/tv_direccion" />
 
@@ -23,6 +32,8 @@
         android:layout_marginStart="35dp"
         android:layout_marginLeft="35dp"
         android:text="@string/Hogar"
+        android:textColor="@color/Communify_White"
+        app:chipBackgroundColor="@color/Communify_BotonesPrincipales"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="@+id/chipSocial" />
 
@@ -58,6 +69,8 @@
         android:layout_height="46dp"
         android:layout_marginLeft="5dp"
         android:text="@string/Otros"
+        android:textColor="@color/Communify_White"
+        app:chipBackgroundColor="@color/Communify_Fondo_labels_85"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/chipSocial"
@@ -79,7 +92,6 @@
 
     <TableLayout
         android:id="@+id/tableLayout"
-        android:layout_width="328dp"
         android:layout_height="0dp"
         android:layout_marginBottom="5dp"
         app:layout_constraintBottom_toTopOf="@+id/buttonComparte"
@@ -93,23 +105,34 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/fotoCocina"
-                android:layout_width="164dp"
-                android:layout_height="180dp"
+            <androidx.cardview.widget.CardView
+                android:layout_width="150dp"
                 android:layout_marginRight="5dp"
-                android:scaleType="centerCrop"
-                app:srcCompat="@drawable/fondococina"
-                tools:ignore="VectorDrawableCompat" />
+                android:padding="0dp"
+                app:cardCornerRadius="15dp">
 
-            <ImageView
-                android:id="@+id/fotoBricolaje"
-                android:layout_width="165dp"
-                android:layout_height="180dp"
-                android:layout_marginLeft="5dp"
-                android:scaleType="centerCrop"
-                app:srcCompat="@drawable/fotobricolaje"
-                tools:ignore="DuplicateIds,VectorDrawableCompat" />
+                <ImageView
+                    android:id="@+id/fotoCocina"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:padding="0dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/fondococina"
+                    tools:ignore="VectorDrawableCompat" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="150dp"
+                app:cardCornerRadius="15dp">
+
+                <ImageView
+                    android:id="@+id/fotoBricolaje"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/fotobricolaje"
+                    tools:ignore="DuplicateIds,VectorDrawableCompat" />
+            </androidx.cardview.widget.CardView>
         </TableRow>
 
         <TableRow
@@ -146,8 +169,7 @@
                 android:layout_height="180dp"
                 android:layout_marginRight="5dp"
                 android:scaleType="centerCrop"
-                app:srcCompat="@drawable/fotojardin"
-                tools:ignore="DuplicateIds,VectorDrawableCompat" />
+                app:srcCompat="@drawable/fotojardin" />
 
             <ImageView
                 android:id="@+id/fotoMecanica"
@@ -155,8 +177,7 @@
                 android:layout_height="180dp"
                 android:layout_marginLeft="5dp"
                 android:scaleType="centerCrop"
-                app:srcCompat="@drawable/fotomecanica"
-                tools:ignore="DuplicateIds,VectorDrawableCompat" />
+                app:srcCompat="@drawable/fotomecanica" />
         </TableRow>
 
         <TableRow
@@ -215,5 +236,6 @@
         android:alpha="0.5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buttonComparte" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
