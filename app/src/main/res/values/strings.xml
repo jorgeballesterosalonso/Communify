@@ -19,5 +19,10 @@
     <string name="UsuarioSignUp">Usuario</string>
     <string name="BtnRegistrarse">Registrarse</string>
     <string name="txtSignup">Al registrarte aceptas los terminos y condiciones de Communify</string>
+    <string name="tab_text_1">Comparte</string>
+    <string name="tab_text_2">Solicita</string>
+    <string name="title_activity_aaaaa">aaaaa</string>
+    <string name="TextoBotonSolicita">Solicitar</string>
+    <string name="TextoBotonComparte">Compartir</string>
 
 </resources>

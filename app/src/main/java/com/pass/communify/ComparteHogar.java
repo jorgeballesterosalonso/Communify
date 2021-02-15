@@ -7,8 +7,13 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.chip.Chip;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.tabs.TabLayout;
+import com.pass.communify.ui.main.SectionsPagerAdapter;
 
 /**
  * Esta es la clase
@@ -47,9 +52,19 @@ public class ComparteHogar extends AppCompatActivity {
         chipHogar = findViewById(R.id.chipHogar);
 
         /*
+         * Aquí inicializamos la parte de las tabs
+         */
+        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
+        ViewPager viewPager = findViewById(R.id.view_pager);
+        viewPager.setAdapter(sectionsPagerAdapter);
+        TabLayout tabs = findViewById(R.id.tabs);
+        tabs.setupWithViewPager(viewPager);
+
+
+        /*
          *Creamos los OnClickListener para que el botón de Comparte se active para poder ser presionado
          */
-        imagenBricolaje.setOnClickListener(new View.OnClickListener() {
+       imagenBricolaje.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast t = new Toast(contexto);
