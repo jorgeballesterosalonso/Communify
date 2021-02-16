@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.pass.communify">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,7 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Communify">
         <activity android:name=".RegisterActivity"></activity>
-        <activity android:name=".LoginActivity"></activity>
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/Theme.Communify.SinBar"></activity>
         <activity android:name=".ElectionActivity"></activity>
         <activity android:name=".ComparteHogar"></activity>
         <activity
