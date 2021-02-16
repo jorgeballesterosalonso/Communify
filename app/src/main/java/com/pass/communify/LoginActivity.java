@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -20,24 +19,18 @@ import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
-import com.google.android.material.snackbar.Snackbar;
-import com.google.firebase.auth.AuthCredential;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.GoogleAuthProvider;
 
-//  AIzaSyDF1hxvPNuqu9aPVBh6CpXgjyoEcND3nqo
+
 public class LoginActivity extends AppCompatActivity implements
         View.OnClickListener {
-    MaterialButton buttonLog;
-    TextView textR;
+    private MaterialButton btn_Login;
+    private TextView tv_Registro;
     private FirebaseAuth mAuth;
     private GoogleSignInClient mGoogleSignInClient;
     private static final String TAG = "SignInActivity";
     private static final int RC_SIGN_IN = 9001;
     private TextView mStatusTextView;
-    private Button sign;
 
 
 
@@ -49,24 +42,8 @@ public class LoginActivity extends AppCompatActivity implements
         mAuth = FirebaseAuth.getInstance();
         // Views
         mStatusTextView = findViewById(R.id.status);
-
-        buttonLog = (MaterialButton) findViewById(R.id.buttonLog);
-        buttonLog.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, ElectionActivity.class);
-                startActivity(intent);
-
-            }
-        });
-        textR = (TextView) findViewById(R.id.textViewR);
-        textR.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
-                startActivity(intent);
-            }
-        });
+        tv_Registro = findViewById(R.id.tv_Registro);
+        btn_Login = findViewById(R.id.btn_Login);
 
 
         //Configuracion de login con Google.
@@ -81,10 +58,10 @@ public class LoginActivity extends AppCompatActivity implements
         setContentView(R.layout.activity_login);
         // Button listeners
         findViewById(R.id.sign_in_button).setOnClickListener(this);
-        findViewById(R.id.sign_out_button).setOnClickListener(this);
         findViewById(R.id.disconnect_button).setOnClickListener(this);
+        findViewById(R.id.btn_Login).setOnClickListener(this);
+        findViewById(R.id.tv_Registro).setOnClickListener(this);
         SignInButton signInButton = findViewById(R.id.sign_in_button);
-        signInButton.setSize(SignInButton.SIZE_STANDARD);
         signInButton.setColorScheme(SignInButton.COLOR_LIGHT);
     }
 
@@ -175,34 +152,42 @@ public class LoginActivity extends AppCompatActivity implements
     private void updateUI(@Nullable GoogleSignInAccount account) {
         if (account != null) {
             mStatusTextView.setText(getString(R.string.signed_in_fmt, account.getDisplayName()));
-
+            ((TextView) findViewById(R.id.status)).setText(R.string.signed_in);
             findViewById(R.id.sign_in_button).setVisibility(View.GONE);
-            findViewById(R.id.sign_out_and_disconnect).setVisibility(View.VISIBLE);
+            findViewById(R.id.disconnect_button).setVisibility(View.VISIBLE);
+
+            Intent intent = new Intent(LoginActivity.this, ElectionActivity.class);
+            startActivity(intent);
+
         } else {
             mStatusTextView.setText(R.string.signed_out);
 
             findViewById(R.id.sign_in_button).setVisibility(View.VISIBLE);
-            findViewById(R.id.sign_out_and_disconnect).setVisibility(View.GONE);
+            findViewById(R.id.disconnect_button).setVisibility(View.GONE);
+            ((TextView) findViewById(R.id.status)).setText(R.string.signed_out);
         }
 
     }
 
-public void onClick(View v) {
-    switch (v.getId()) {
-        case R.id.sign_in_button:
-            signIn();
-            break;
-        case R.id.sign_out_button:
-            signOut();
-            break;
-        case R.id.disconnect_button:
-            revokeAccess();
-            break;
-        case R.id.buttonLog:
-            revokeAccess();
-            break;
-        case R.id.textViewR:
-            revokeAccess();
-            break;
-    }}
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.sign_in_button:
+                signIn();
+                break;
+
+            case R.id.disconnect_button:
+                revokeAccess();
+                break;
+            case R.id.btn_Login:
+                Intent intent = new Intent(LoginActivity.this, ElectionActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.tv_Registro:
+                Intent intent2 = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent2);
+                break;
+        }
+    }
+
+
 }

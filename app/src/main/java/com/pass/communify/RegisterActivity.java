@@ -13,7 +13,7 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        registrar = findViewById(R.id.buttonLog);
+        registrar = findViewById(R.id.btn_Login);
         registrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

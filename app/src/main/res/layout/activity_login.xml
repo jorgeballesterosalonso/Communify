@@ -25,13 +25,13 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="199dp"
-        android:layout_height="115dp"
-        android:layout_marginTop="84dp"
+        android:layout_width="230dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="90dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logocommunify" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/usernameTIL"
@@ -77,172 +77,78 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/buttonLog"
+        android:id="@+id/btn_Login"
         android:layout_width="0dp"
         android:layout_height="54dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="250dp"
         android:alpha="0.8"
         android:backgroundTint="@color/Communify_BotonesPrincipales"
         android:text="Login"
         android:textColor="@color/Communify_White"
+        app:layout_constraintBottom_toBottomOf="@+id/status"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@id/guideline3"
         app:layout_constraintTop_toBottomOf="@+id/passworldTIL" />
 
     <TextView
-        android:id="@+id/textViewR"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="572dp"
+        android:id="@+id/tv_Registro"
+        android:layout_width="239dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="612dp"
+        android:layout_marginBottom="31dp"
         android:text="¿You don´t have an account? Sing up"
         android:textColor="@color/Communify_Textos_teal"
+        app:layout_constraintBottom_toTopOf="@+id/status"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="@id/guideline3"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout3"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginBottom="4dp"
-        android:layout_weight="3"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/usernameTIL"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/title_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:gravity="center"
-            android:text="@string/title_text"
-            android:textColor="@android:color/white"
-            android:textSize="36sp" />
-
-        <TextView
-            android:id="@+id/detail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fadeScrollbars="true"
-            android:gravity="center"
-            android:maxLines="5"
-            android:padding="10dp"
-            android:scrollbars="vertical"
-            android:textColor="@android:color/white"
-            android:textSize="14sp" />
-
-        <Button
-            android:id="@+id/button_optional_action"
-            style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            tools:text="Optional Action"
-            tools:visibility="visible" />
-
-    </LinearLayout>
+        app:layout_constraintTop_toTopOf="parent"
 
 
-    <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="100dp"
-        android:layout_marginTop="22dp"
-        android:layout_marginBottom="7dp"
-        android:layout_weight="0"
-        android:background="@color/Communify_Textos_teal"
-        app:layout_constraintBottom_toTopOf="@+id/textViewR"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sign_out_button">
-
-        <com.google.android.gms.common.SignInButton
-            android:id="@+id/sign_in_button"
-            android:layout_width="157dp"
-            android:layout_height="79dp"
-            android:visibility="visible"
-            tools:visibility="visible" />
-
-        <LinearLayout
-            android:id="@+id/sign_out_and_disconnect"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:orientation="horizontal"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:visibility="gone"
-            tools:visibility="visible">
-
-        </LinearLayout>
-
-        <ImageView
-            android:id="@+id/google_icon"
-            android:layout_width="123dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="179dp"
-            android:layout_marginLeft="179dp"
-            android:layout_marginEnd="184dp"
-            android:layout_marginRight="184dp"
-            android:layout_marginBottom="31dp"
-            android:contentDescription="@string/desc_google_icon"
-            android:src="@drawable/abc_vector_test"
-            app:layout_constraintStart_toStartOf="parent" />
-
-    </RelativeLayout>
-
-    <Button
-        android:id="@+id/sign_out_button"
-        android:layout_width="125dp"
-        android:layout_height="50dp"
+        />
 
 
-        android:layout_marginStart="65dp"
-        android:layout_marginLeft="65dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
-        android:layout_marginBottom="79dp"
-        android:layout_weight="1"
-        android:text="@string/sign_out"
-        android:theme="@style/Theme.Communify"
-        app:layout_constraintBottom_toTopOf="@+id/textViewR"
-        app:layout_constraintEnd_toStartOf="@+id/disconnect_button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonLog" />
 
-    <Button
-        android:id="@+id/disconnect_button"
-        android:layout_width="125dp"
-        android:layout_height="50dp"
-
-        android:layout_marginTop="7dp"
-        android:layout_marginEnd="68dp"
-        android:layout_marginRight="68dp"
-        android:layout_marginBottom="79dp"
-        android:layout_weight="1"
-        android:text="@string/disconnect"
-        android:theme="@style/Theme.Communify"
-        app:layout_constraintBottom_toTopOf="@+id/textViewR"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/sign_out_button"
-        app:layout_constraintTop_toBottomOf="@+id/buttonLog" />
 
     <TextView
         android:id="@+id/status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/signed_out"
-        android:textColor="@android:color/white"
+        android:textColor="@color/Communify_Black"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewR" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_Registro" />
+
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/sign_in_button"
+        android:layout_width="160dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="280dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/status"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.gms.common.internal.SignInButtonImpl
+        android:id="@+id/disconnect_button"
+        android:layout_width="160dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="280dp"
+        android:layout_weight="1"
+        android:text="@string/disconnect"
+        android:theme="@style/Theme.Communify"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/status"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
