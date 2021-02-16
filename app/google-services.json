@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "621942747490",
+    "firebase_url": "https://communify-78b34-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "communify-78b34",
+    "storage_bucket": "communify-78b34.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:621942747490:android:738d6c3b3e34b22cd67c3b",
+        "android_client_info": {
+          "package_name": "com.pass.communify"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "621942747490-jjkfp180to17q03gehogocnif9h583p7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pass.communify",
+            "certificate_hash": "458e3a561a932f27067b7c3984b52058cac9d780"
+          }
+        },
+        {
+          "client_id": "621942747490-v9hr9pf11dahnurqc37kbo30o034r9v7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDF1hxvPNuqu9aPVBh6CpXgjyoEcND3nqo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "621942747490-v9hr9pf11dahnurqc37kbo30o034r9v7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

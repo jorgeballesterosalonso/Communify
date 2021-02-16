@@ -99,7 +99,7 @@
             android:background="@color/Communify_White" />
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/buttonLog"
+        android:id="@+id/btn_Login"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginTop="8dp"
@@ -112,7 +112,7 @@
         app:layout_constraintStart_toStartOf="@id/guideline3"
         app:layout_constraintTop_toBottomOf="@+id/passworldTIL" />
     <TextView
-        android:id="@+id/textViewR"
+        android:id="@+id/tv_Registro"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginTop="560dp"

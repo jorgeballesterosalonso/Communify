@@ -4,6 +4,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/td_vista"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -24,13 +25,13 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="199dp"
-        android:layout_height="115dp"
-        android:layout_marginTop="84dp"
+        android:layout_width="230dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="90dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logocommunify" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/usernameTIL"
@@ -39,13 +40,12 @@
         android:layout_marginTop="63dp"
         android:alpha="0.8"
         android:hint="Username"
-        app:hintTextColor="@color/Communify_textos_oscuros"
+        android:textColorHint="@color/Communify_textos_oscuros"
         app:counterTextColor="@color/Communify_textos_oscuros"
+        app:hintTextColor="@color/Communify_textos_oscuros"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintStart_toStartOf="@id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        android:textColorHint="@color/Communify_textos_oscuros"
-        >
+        app:layout_constraintTop_toBottomOf="@+id/imageView3">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -62,44 +62,92 @@
         android:layout_height="56dp"
         android:alpha="0.8"
         android:hint="Password"
+        android:textColorHint="@color/Communify_textos_oscuros"
         app:hintTextColor="@color/Communify_textos_oscuros"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintStart_toStartOf="@id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/usernameTIL"
-        android:textColorHint="@color/Communify_textos_oscuros">
+        app:layout_constraintTop_toBottomOf="@+id/usernameTIL">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textStyle="bold"
             android:background="@color/Communify_White"
-            android:textColor="@color/Communify_Textos_teal" />
+            android:textColor="@color/Communify_Textos_teal"
+            android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/buttonLog"
+        android:id="@+id/btn_Login"
         android:layout_width="0dp"
         android:layout_height="54dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="250dp"
         android:alpha="0.8"
         android:backgroundTint="@color/Communify_BotonesPrincipales"
         android:text="Login"
         android:textColor="@color/Communify_White"
+        app:layout_constraintBottom_toBottomOf="@+id/status"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@id/guideline3"
         app:layout_constraintTop_toBottomOf="@+id/passworldTIL" />
 
     <TextView
-        android:id="@+id/textViewR"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="572dp"
+        android:id="@+id/tv_Registro"
+        android:layout_width="239dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="612dp"
+        android:layout_marginBottom="31dp"
         android:text="¿You don´t have an account? Sing up"
         android:textColor="@color/Communify_Textos_teal"
+        app:layout_constraintBottom_toTopOf="@+id/status"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="@id/guideline3"
+        app:layout_constraintTop_toTopOf="parent"
+
+
+        />
+
+
+
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/signed_out"
+        android:textColor="@color/Communify_Black"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Registro" />
+
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/sign_in_button"
+        android:layout_width="160dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="280dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/status"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.gms.common.internal.SignInButtonImpl
+        android:id="@+id/disconnect_button"
+        android:layout_width="160dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="280dp"
+        android:layout_weight="1"
+        android:text="@string/disconnect"
+        android:theme="@style/Theme.Communify"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/status"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toTopOf="parent" />
 
 
