@@ -78,8 +78,9 @@
     <string name="server_client_id">Communify</string>
     <!---->
 
-        <string name="sign">This is an <u>underline</u>.</string>
-
+    <string name="sign">This is an <u>underline</u>.</string>
+    <string name="TituloDescripcion">Añade una descripción al producto</string>
+    <string name="EscribeAqui">Escribe aquí...</string>
 
 
 </resources>
