@@ -219,36 +219,32 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonComparte"
-        android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="5dp"
+        android:layout_width="0dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="32dp"
         android:backgroundTint="@color/Communify_BotonesPrincipales"
         android:text="@string/TituloVentanaComparteHogar"
         android:textColor="@color/Communify_White"
         app:backgroundTintMode="screen"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline2" />
 
-    <Button
-        android:id="@+id/buttonSiguiente"
-        android:layout_width="40dp"
-        android:layout_height="60dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginBottom="5dp"
-        android:alpha="0.5"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/buttonComparte" />
 
-    <Button
-        android:id="@+id/buttonAnterior"
-        android:layout_width="40dp"
-        android:layout_height="60dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="5dp"
-        android:alpha="0.5"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonSolicita"
+        android:layout_width="0dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="@color/Communify_BotonesPrincipales"
+        android:text="@string/solicitar"
+        android:textColor="@color/Communify_White"
+        app:backgroundTintMode="screen"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonComparte" />
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline4" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
