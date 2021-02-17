@@ -213,6 +213,7 @@
         android:id="@+id/buttonComparte"
         android:layout_width="0dp"
         android:layout_height="65dp"
+
         android:layout_marginBottom="32dp"
         android:backgroundTint="@color/Communify_BotonesPrincipales"
         android:text="@string/TituloVentanaComparteHogar"
