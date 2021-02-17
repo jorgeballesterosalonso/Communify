@@ -19,6 +19,7 @@
         android:layout_height="46dp"
         android:layout_marginStart="4dp"
         android:layout_marginLeft="4dp"
+        android:textAlignment="center"
         android:layout_marginTop="8dp"
         android:text="@string/Social"
         android:textColor="@color/Communify_White"
@@ -29,6 +30,7 @@
     <com.google.android.material.chip.Chip
         android:id="@+id/chipHogar"
         android:layout_width="83dp"
+        android:textAlignment="center"
         android:layout_height="46dp"
         android:layout_marginStart="56dp"
         android:layout_marginLeft="56dp"
@@ -36,7 +38,8 @@
         android:textColor="@color/Communify_White"
         app:chipBackgroundColor="@color/Communify_BotonesPrincipales"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/chipSocial" />
+        app:layout_constraintTop_toTopOf="@+id/chipSocial"
+        android:gravity="center_horizontal" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/tv_direccion"
@@ -70,12 +73,14 @@
         android:layout_height="46dp"
         android:layout_marginLeft="5dp"
         android:text="@string/Otros"
+        android:textAlignment="center"
         android:textColor="@color/Communify_White"
         app:chipBackgroundColor="@color/Communify_Fondo_labels_85"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/chipSocial"
-        app:layout_constraintTop_toTopOf="@+id/chipSocial" />
+        app:layout_constraintTop_toTopOf="@+id/chipSocial"
+        android:gravity="center_horizontal" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -124,7 +129,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="175dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="20dp"
                 app:cardCornerRadius="15dp">
 
                 <ImageView
@@ -180,7 +185,7 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="175dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="20dp"
                 app:cardCornerRadius="15dp">
 
                 <ImageView
@@ -227,6 +232,7 @@
         android:textColor="@color/Communify_White"
         app:backgroundTintMode="screen"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginRight="5dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline2" />
@@ -237,6 +243,7 @@
         android:layout_width="0dp"
         android:layout_height="65dp"
         android:layout_marginBottom="32dp"
+        android:layout_marginLeft="5dp"
         android:backgroundTint="@color/Communify_BotonesPrincipales"
         android:text="@string/solicitar"
         android:textColor="@color/Communify_White"
