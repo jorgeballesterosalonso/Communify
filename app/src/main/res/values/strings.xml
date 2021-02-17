@@ -42,7 +42,10 @@
 
     <!-- Google Play Services error for Toast -->
     <string name="play_services_error_fmt">Google Play Services Error: %i</string>
-
+    <string name="top_app_bar_label_title">Top app bar</string>
+    <string name="app_bar_menu_share">Share</string>
+    <string name="app_bar_menu_search">Search</string>
+    <string name="app_bar_menu_bookmark">Bookmark</string>
     <!-- Button labels -->
     <string name="sign_out">Sign Out</string>
     <string name="disconnect">Disconnect</string>
