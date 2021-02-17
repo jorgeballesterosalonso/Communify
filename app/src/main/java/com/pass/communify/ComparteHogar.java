@@ -42,7 +42,6 @@ public class ComparteHogar extends AppCompatActivity {
 
         btnComparte = findViewById(R.id.buttonComparte);
         btnComparte.setEnabled(false);
-        btnAtras = findViewById(R.id.buttonAnterior);
 
         chipHogar = findViewById(R.id.chipHogar);
 
@@ -56,6 +55,7 @@ public class ComparteHogar extends AppCompatActivity {
                 t.setText("Has pulsado en el bricolaje");
                 t.show();
                 btnComparte.setEnabled(true);
+                btnComparte.setActivated(false);
             }
         });
         imagenCocina.setOnClickListener(new View.OnClickListener() {
