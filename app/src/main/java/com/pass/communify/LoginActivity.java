@@ -156,7 +156,7 @@ public class LoginActivity extends AppCompatActivity implements
             findViewById(R.id.sign_in_button).setVisibility(View.GONE);
             findViewById(R.id.disconnect_button).setVisibility(View.VISIBLE);
 
-            Intent intent = new Intent(LoginActivity.this, ElectionActivity.class);
+            Intent intent = new Intent(LoginActivity.this, ComparteHogar.class);
             startActivity(intent);
 
         } else {
@@ -179,7 +179,7 @@ public class LoginActivity extends AppCompatActivity implements
                 revokeAccess();
                 break;
             case R.id.btn_Login:
-                Intent intent = new Intent(LoginActivity.this, ElectionActivity.class);
+                Intent intent = new Intent(LoginActivity.this, ComparteHogar.class);
                 startActivity(intent);
                 break;
             case R.id.tv_Registro:

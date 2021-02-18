@@ -60,25 +60,6 @@ public class Splash extends AppCompatActivity {
                 //.circleCrop() //forma de circulo
                 //.getDiskCacheStrategy(DiskCacheStrategy.NONE) //opciones para caches de glide
                 .into(fotoLogo);
-
-
-        /**
-         @Animacion: Efecto de CrossFade del mensaje al iniciar la aplicacion,
-         las opciones comentadas son para poner colores o mensajes.
-         **/
-
-        TextView bienvenida = findViewById(R.id.tv_bienvenida);
-        Animation animacionAlphaTextoBienvenida = AnimationUtils.loadAnimation(this, R.anim.alpha2);
-        bienvenida.startAnimation(animacionAlphaTextoBienvenida);
-        Glide.with(this)
-                .load(bienvenida)
-                //.centerCrop()
-                .transition(DrawableTransitionOptions.withCrossFade(500));
-        //.placeholder(new ColorDrawable(this.getResources() //colo si no carga el logo
-        //.getColor(R.color.design_default_color_background))) //color por defecto
-        //.circleCrop() //forma de circulo
-        //.getDiskCacheStrategy(DiskCacheStrategy.NONE) //opciones para caches de glide
-
     }
 
     /**
@@ -97,7 +78,7 @@ public class Splash extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        }, 8000); //Duracion entre el cambio de pantallas
+        }, 2000); //Duracion entre el cambio de pantallas
     }
     private void espera(boolean locationPermission) {
 
