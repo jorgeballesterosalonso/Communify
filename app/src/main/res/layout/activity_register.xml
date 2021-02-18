@@ -18,14 +18,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_end="347dp" />
+        app:layout_constraintGuide_percent="0.15815085" />
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="199dp"
-        android:layout_height="115dp"
-        android:layout_marginTop="84dp"
+        android:layout_width="230dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="92dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logocommunify" />
@@ -33,28 +34,38 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/nombreyape"
         android:layout_width="0dp"
-        android:layout_height="48dp"
+        android:layout_height="56dp"
         android:layout_marginTop="63dp"
         android:alpha="0.8"
         android:hint="@string/nombre_apeSingUp"
+        android:textColorHint="@color/Communify_textos_oscuros"
+        app:hintTextColor="@color/Communify_textos_oscuros"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintStart_toStartOf="@id/guideline3"
         app:layout_constraintTop_toBottomOf="@+id/imageView3">
 
+
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/Communify_White"
+            android:textColor="@color/Communify_Textos_teal"
+            android:textColorHint="#FFFFFF"
+            android:textStyle="bold" />
 
-            android:background="@android:color/white" />
+
+
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/email"
         android:layout_width="0dp"
-        android:layout_height="48dp"
+        android:layout_height="53dp"
         android:alpha="0.8"
         android:background="@android:color/white"
         android:hint="@string/Email"
+        android:textColorHint="@color/Communify_textos_oscuros"
+        app:hintTextColor="@color/Communify_textos_oscuros"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintStart_toStartOf="@id/guideline3"
         app:layout_constraintTop_toBottomOf="@+id/nombreyape">
@@ -62,16 +73,22 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@android:color/white" />
+            android:background="@color/Communify_White"
+            android:textColor="@color/Communify_Textos_teal"
+            android:textStyle="bold" />
+
+
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/usernameTIL"
         android:layout_width="0dp"
-        android:layout_height="48dp"
+        android:layout_height="53dp"
         android:alpha="0.8"
         android:background="@color/Communify_White"
         android:hint="@string/UsuarioSignUp"
+        android:textColorHint="@color/Communify_textos_oscuros"
+        app:hintTextColor="@color/Communify_textos_oscuros"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintStart_toStartOf="@id/guideline3"
         app:layout_constraintTop_toBottomOf="@+id/email">
@@ -79,16 +96,20 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/Communify_White" />
+            android:background="@color/Communify_White"
+            android:textColor="@color/Communify_Textos_teal"
+            android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/passworldTIL"
         android:layout_width="0dp"
-        android:layout_height="48dp"
+        android:layout_height="53dp"
         android:alpha="0.8"
         android:background="@android:color/white"
         android:hint="@string/PasswordSignUp"
+        android:textColorHint="@color/Communify_textos_oscuros"
+        app:hintTextColor="@color/Communify_textos_oscuros"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintStart_toStartOf="@id/guideline3"
         app:layout_constraintTop_toBottomOf="@+id/usernameTIL">
@@ -96,13 +117,16 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/Communify_White" />
+            android:background="@color/Communify_White"
+            android:textColor="@color/Communify_Textos_teal"
+            android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_Login"
         android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="250dp"
         android:alpha="0.8"
         android:text="@string/BtnRegistrarse"
         android:backgroundTint="@color/Communify_BotonesPrincipales"
@@ -111,18 +135,19 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/guideline3"
         app:layout_constraintTop_toBottomOf="@+id/passworldTIL" />
+
     <TextView
         android:id="@+id/tv_Registro"
         android:layout_width="0dp"
         android:layout_height="48dp"
-        android:layout_marginTop="560dp"
+        android:layout_marginTop="608dp"
+        android:gravity="center_horizontal"
         android:text="@string/txtSignup"
         android:textAlignment="center"
         android:textColor="@color/Communify_Textos_teal"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@id/guideline3"
-        app:layout_constraintTop_toTopOf="parent"
-        android:gravity="center_horizontal" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
