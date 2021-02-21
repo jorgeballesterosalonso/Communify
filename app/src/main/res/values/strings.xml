@@ -21,10 +21,11 @@
     <string name="txtSignup">Al registrarte aceptas los terminos y condiciones de Communify</string>
 
 
+    <string name="sign">"¿You don´t have an account2?  <b><u>Sing up"</u></b>.</string>
+
     <!--Google -->
 
     <string name="title_text">Google Sign-In\nQuickstart</string>
-
     <!-- Sign-in status messages -->
     <string name="signed_in_fmt">Signed in as: %s</string>
     <string name="signed_in">Signed in</string>
@@ -50,6 +51,7 @@
 
     <!-- Content Description for images -->
     <string name="desc_google_icon">Google Logo</string>
+
 
     <!-- Rationale for asking for Contacts -->
     <string name="contacts_permission_rationale">Contacts access is needed in order to retrieve your email address.</string>
@@ -78,7 +80,7 @@
     <string name="server_client_id">Communify</string>
     <!---->
 
-        <string name="sign">This is an <u>underline</u>.</string>
+
 
 
 
