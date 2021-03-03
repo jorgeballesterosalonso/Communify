@@ -78,8 +78,7 @@
     <string name="server_client_id">Communify</string>
     <!---->
 
-        <string name="sign">This is an <u>underline</u>.</string>
-
+    <string name="sign">This is an <u>underline</u>.</string>
 
 
 </resources>
