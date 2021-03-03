@@ -28,6 +28,7 @@
             android:name=".LoginActivity"
             android:theme="@style/Theme.Communify.SinBar" />
         <activity android:name=".ElectionActivity" />
+        <activity android:name=".AniadirProducto"></activity>
         <activity android:name=".MapsActivity">
             <!--
                  The API key for Google Maps-based APIs is defined as a string resource.

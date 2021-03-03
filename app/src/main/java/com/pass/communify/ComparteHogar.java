@@ -69,7 +69,7 @@ public class ComparteHogar extends AppCompatActivity implements
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
-        mStatusTextView = findViewById(R.id.tv_sign_status);
+        //mStatusTextView = findViewById(R.id.tv_sign_status);
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 //<---------------------------------Googgle--------------------------------------------------------<
         /*
@@ -170,7 +170,7 @@ public class ComparteHogar extends AppCompatActivity implements
             //name.setText(getString(R.string.signed_in_fmt, account.getDisplayName()));
             this.account = account;
         } else {
-            ((TextView) findViewById(R.id.tv_sign_status)).setText(R.string.signed_in_err);
+           // ((TextView) findViewById(R.id.tv_sign_status)).setText(R.string.signed_in_err);
         }
     }
 //<---------------------------------Googgle--------------------------------------------------------<
