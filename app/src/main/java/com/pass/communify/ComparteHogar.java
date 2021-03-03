@@ -38,12 +38,13 @@ import java.util.Calendar;
 public class ComparteHogar extends AppCompatActivity implements
         View.OnClickListener {
     ComparteHogar contexto = this;
-
+    private TextView nombre;
     private GoogleSignInClient mGoogleSignInClient;//Google
     private final String TAG = "SignInActivity";//Google
     private final int RC_SIGN_IN = 9001; //Google
     private TextView mStatusTextView; //Google
     private TextView name; //Pruebas de boton del modal
+    private GoogleSignInAccount account;
 
     LoginActivity loginCursor = new LoginActivity(); //Puebas objeto login, llamada de metodos
     Button btnComparte = null;
@@ -164,8 +165,10 @@ public class ComparteHogar extends AppCompatActivity implements
     public void updateUI(@Nullable GoogleSignInAccount account) {
 
         if (account != null) {
+//Setea una variable global con el nombre
             mStatusTextView.setText(getString(R.string.signed_in_fmt, account.getDisplayName()));
             //name.setText(getString(R.string.signed_in_fmt, account.getDisplayName()));
+            this.account = account;
         } else {
             ((TextView) findViewById(R.id.tv_sign_status)).setText(R.string.signed_in_err);
         }
@@ -232,7 +235,10 @@ public class ComparteHogar extends AppCompatActivity implements
     public void showAlertDialogButtonClicked(ComparteHogar view) {
         // setup the alert builder
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setView(getLayoutInflater().inflate(R.layout.alertdialog_view, null));
+        View vista = getLayoutInflater().inflate(R.layout.alertdialog_view, null);
+        TextView tv = vista.findViewById(R.id.name);
+        tv.setText(getString(R.string.signed_in_fmt, account.getDisplayName()));
+        builder.setView(vista);
         // add the buttons
         builder.setPositiveButton("name", new DialogInterface.OnClickListener() {
             @Override
@@ -246,6 +252,7 @@ public class ComparteHogar extends AppCompatActivity implements
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 // do something like...
+
                 dialog.dismiss();
             }
         });
