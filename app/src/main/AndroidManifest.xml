@@ -3,6 +3,7 @@
     package="com.pass.communify">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -14,17 +15,21 @@
 
     <application
         android:allowBackup="true"
+        android:usesCleartextTraffic="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Communify">
-        <activity android:name=".AniadirProducto">
+        <activity android:name=".ChatBot">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".AniadirProducto">
+
         </activity>
         <activity android:name=".RegisterActivity" />
         <activity
@@ -48,12 +53,10 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".ComparteHogar"></activity>
+        <activity android:name=".ComparteHogar" />
         <activity
             android:name=".Splash"
-            android:theme="@style/Theme.Communify.SinBar">
-
-        </activity>
+            android:theme="@style/Theme.Communify.SinBar"></activity>
         <activity android:name=".MainActivity" />
     </application>
 

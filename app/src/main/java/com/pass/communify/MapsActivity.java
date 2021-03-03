@@ -71,13 +71,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             String[] permisos = {Manifest.permission.ACCESS_FINE_LOCATION};
             requestPermissions(permisos, 99);
 
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
             return;
         } else {
             obtenerUbicacion();
