@@ -7,7 +7,7 @@
     tools:context=".AniadirProducto">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imagenProducto"
         android:layout_width="329dp"
         android:layout_height="303dp"
         android:layout_marginTop="32dp"
