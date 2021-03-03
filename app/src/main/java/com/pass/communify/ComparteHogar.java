@@ -166,7 +166,7 @@ public class ComparteHogar extends AppCompatActivity implements
 
         if (account != null) {
 //Setea una variable global con el nombre
-            mStatusTextView.setText(getString(R.string.signed_in_fmt, account.getDisplayName()));
+           // mStatusTextView.setText(getString(R.string.signed_in_fmt, account.getDisplayName()));
             //name.setText(getString(R.string.signed_in_fmt, account.getDisplayName()));
             this.account = account;
         } else {
@@ -224,6 +224,12 @@ public class ComparteHogar extends AppCompatActivity implements
             showAlertDialogButtonClicked(ComparteHogar.this);
             return true;
         }
+        if (id == R.id.compartir) {
+            Toast toast = Toast.makeText(this, "Compartir", Toast.LENGTH_LONG);
+            toast.show();
+
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 //<---------------------------------Menu AppBa-----------------------------------------------------<
@@ -252,7 +258,8 @@ public class ComparteHogar extends AppCompatActivity implements
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 // do something like...
-
+                Intent intent = new Intent(ComparteHogar.this, About.class);
+                startActivity(intent);
                 dialog.dismiss();
             }
         });

@@ -21,7 +21,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Communify">
         <activity android:name=".About"
-            android:theme="@style/Theme.Communify.SinBar">
+            android:theme="@style/Theme.Communify"
+            android:parentActivityName=".ComparteHogar">
             </activity>
         <activity android:name=".RegisterActivity" />
         <activity
@@ -29,7 +30,9 @@
             android:theme="@style/Theme.Communify.SinBar" />
         <activity android:name=".ElectionActivity" />
         <activity android:name=".AniadirProducto"></activity>
-        <activity android:name=".MapsActivity">
+        <activity android:name=".MapsActivity"
+            android:theme="@style/Theme.Communify"
+            android:parentActivityName=".ComparteHogar">
             <!--
                  The API key for Google Maps-based APIs is defined as a string resource.
                  (See the file "res/values/google_maps_api.xml").
