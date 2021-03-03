@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/imagenProducto"
-        android:layout_width="329dp"
-        android:layout_height="303dp"
+        android:layout_width="298dp"
+        android:layout_height="195dp"
         android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,9 +20,9 @@
         android:id="@+id/LayoutDescripcion"
         android:layout_width="306dp"
         android:layout_height="120dp"
-        android:layout_marginBottom="52dp"
-        android:hint="@string/EscribeAqui"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="20dp"
+        android:hint=""
+        app:layout_constraintBottom_toTopOf="@+id/btnAniadir"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent">
@@ -34,6 +34,7 @@
             android:layout_height="match_parent"
             android:ems="10"
             android:gravity="start|top"
+            android:backgroundTint="@color/Communify_Fondo_labels_85"
             android:inputType="textMultiLine"
             android:textSize="10sp" />
 
@@ -47,5 +48,45 @@
         android:text="@string/TituloDescripcion"
         app:layout_constraintBottom_toTopOf="@+id/LayoutDescripcion"
         app:layout_constraintStart_toStartOf="@+id/LayoutDescripcion" />
+
+    <Button
+        android:id="@+id/btnAniadir"
+        android:layout_width="162dp"
+        android:layout_height="76dp"
+        android:backgroundTint="@color/Communify_BotonesPrincipales"
+        android:layout_marginBottom="20dp"
+        android:text="@string/TituloVentanaComparteHogar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagenProducto">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/etTitulo"
+            android:backgroundTint="@color/Communify_Fondo_labels_85"
+            android:hint=""
+            android:textColorHint="@color/Communify_White"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/TituloProducto"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
