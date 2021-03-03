@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools"
+
+    tools:context="com.Xavi.myapplication.MainActivity">
+
+
+    <item
+
+        android:id="@+id/Setting"
+        android:title="Opciones"
+        app:showAsAction="withText" />
+    <item
+
+        android:id="@+id/Log_off"
+        android:title="Cerrar sesion"
+        app:showAsAction="withText" />
+
+    <item
+
+        android:id="@+id/Close"
+        android:title="Salir"
+        app:showAsAction="withText" />
+
+
+            android:title="Toca para apagar el telefono" />
+        <item
+            android:id="@+id/user"
+            android:icon="@drawable/ic_user_foreground"
+            app:showAsAction="always|withText"
+            android:title="" />
+
+
+</menu>

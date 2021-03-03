@@ -21,6 +21,8 @@
     <string name="txtSignup">Al registrarte aceptas los terminos y condiciones de Communify</string>
 
 
+    <string name="sign">"¿You don´t have an account?<b><u>Sing up"</u></b>.</string>
+
     <!--Google -->
 
     <string name="title_text">Google Sign-In\nQuickstart</string>
@@ -78,7 +80,6 @@
     <string name="server_client_id">Communify</string>
     <!---->
 
-    <string name="sign">This is an <u>underline</u>.</string>
     <string name="TituloDescripcion">Añade una descripción al producto</string>
     <string name="EscribeAqui">Escribe aquí...</string>
     <string name="DescripcionProducto">Escribe un título para el producto</string>
