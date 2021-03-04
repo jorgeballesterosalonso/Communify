@@ -34,6 +34,7 @@ public class LoginActivity extends AppCompatActivity implements
     private TextView mStatusTextView;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +56,7 @@ public class LoginActivity extends AppCompatActivity implements
         // Cliente
         // Cree un GoogleSignInClient con las opciones especificadas por gso.
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+        setContentView(R.layout.activity_login);
         // Button listeners
         findViewById(R.id.sign_in_button).setOnClickListener(this);
         findViewById(R.id.disconnect_button).setOnClickListener(this);
@@ -64,9 +66,7 @@ public class LoginActivity extends AppCompatActivity implements
         signInButton.setColorScheme(SignInButton.COLOR_LIGHT);
     }
 
-    /**
-     * Compruebe la cuenta de inicio de sesión de Google existente, si el usuario ya ha iniciado sesión
-     */
+
     @Override
     public void onStart() {
         super.onStart();
@@ -79,13 +79,7 @@ public class LoginActivity extends AppCompatActivity implements
         // END on_start_sign_in
     }
 
-    /**
-     * Conecta con Google y muestra las cuentas del usuario
-     *
-     * @param requestCode
-     * @param resultCode
-     * @param data
-     */
+
     // INICIO en Resultado de actividad
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -101,9 +95,7 @@ public class LoginActivity extends AppCompatActivity implements
     }
     //FIN del resultado de la actividad
 
-    /**
-     * @param completedTask devuele true o false si se registra con exito
-     */
+
     //INICIO manejar Inicio sesión del Resultado
     private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
         try {
@@ -120,9 +112,7 @@ public class LoginActivity extends AppCompatActivity implements
     }
     // Final
 
-    /**
-     * inicia la sesion de google
-     */
+
     // Inico signIn
     private void signIn() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
@@ -130,12 +120,23 @@ public class LoginActivity extends AppCompatActivity implements
     }
     // Final signIn
 
+    // Inicio signOut
+    private void signOut() {
+        mGoogleSignInClient.signOut()
+                .addOnCompleteListener(this, new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        // Inicio Excluido
+                        updateUI(null);
+                        // Fin Excluido
+                    }
+                });
+    }
 
-    /**
-     * Cierra sesion de google
-     */
+// Final signOut
+
     // Inicio acceso revocado
-    public void revokeAccess() {
+    private void revokeAccess() {
         mGoogleSignInClient.revokeAccess()
                 .addOnCompleteListener(this, new OnCompleteListener<Void>() {
                     @Override
@@ -148,20 +149,15 @@ public class LoginActivity extends AppCompatActivity implements
     }
     // Fin acceso revocado
 
-    /**
-     * @param account le pasa los datos a ala cuenta si se ha inciado o no la sesion.
-     *                comparamos resultado y realizamos acciones segun necesitemos
-     */
-    //Comprueba si estas conectado
-    public void updateUI(@Nullable GoogleSignInAccount account) {
+
+    private void updateUI(@Nullable GoogleSignInAccount account) {
         if (account != null) {
             mStatusTextView.setText(getString(R.string.signed_in_fmt, account.getDisplayName()));
             ((TextView) findViewById(R.id.status)).setText(R.string.signed_in);
             findViewById(R.id.sign_in_button).setVisibility(View.GONE);
             findViewById(R.id.disconnect_button).setVisibility(View.VISIBLE);
 
-
-            Intent intent = new Intent(LoginActivity.this, ComparteHogar.class);
+            Intent intent = new Intent(LoginActivity.this, ElectionActivity.class);
             startActivity(intent);
 
         } else {
@@ -174,16 +170,12 @@ public class LoginActivity extends AppCompatActivity implements
 
     }
 
-    /**
-     * Switch de todos lo botones del Activity
-     *
-     * @param v
-     */
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.sign_in_button:
                 signIn();
                 break;
+
             case R.id.disconnect_button:
                 revokeAccess();
                 break;

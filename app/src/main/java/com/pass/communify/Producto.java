@@ -7,11 +7,21 @@ public class Producto {
     private String titulo;
     private String descripcion;
     private Uri uri;
+    private boolean esCompartido;
 
-    public Producto(String titulo, String descripcion, Uri uri) {
+    public boolean isEsCompartido() {
+        return esCompartido;
+    }
+
+    public void setEsCompartido(boolean esCompartido) {
+        this.esCompartido = esCompartido;
+    }
+
+    public Producto(String titulo, String descripcion, Uri uri, boolean esCompartido) {
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.uri = uri;
+        this.esCompartido = esCompartido;
     }
 
     @Override

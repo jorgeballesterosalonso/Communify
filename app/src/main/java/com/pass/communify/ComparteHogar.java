@@ -1,17 +1,13 @@
 package com.pass.communify;
 
-import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,7 +15,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -28,9 +23,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.chip.Chip;
-
-import java.util.Calendar;
 
 /**
  * Esta es la clase
@@ -45,6 +37,7 @@ public class ComparteHogar extends AppCompatActivity implements
     private TextView mStatusTextView; //Google
     private TextView name; //Pruebas de boton del modal
     private GoogleSignInAccount account;
+    private Button btnSolicita;
 
     LoginActivity loginCursor = new LoginActivity(); //Puebas objeto login, llamada de metodos
     Button btnComparte = null;
@@ -63,6 +56,8 @@ public class ComparteHogar extends AppCompatActivity implements
 
         btnComparte = findViewById(R.id.buttonComparte);
         btnComparte.setEnabled(false);
+        btnSolicita = findViewById(R.id.buttonSolicita);
+        btnSolicita.setEnabled(false);
 //>---------------------------------Googgle-------------------------------------------------------->
         name = findViewById(R.id.name);
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -84,6 +79,7 @@ public class ComparteHogar extends AppCompatActivity implements
         findViewById(R.id.chipHogar).setOnClickListener(this);
         findViewById(R.id.chipSocial).setOnClickListener(this);
         findViewById(R.id.chipOtros).setOnClickListener(this);
+        findViewById(R.id.fab).setOnClickListener(this);
     }
     //>---------------------------------Googgle-------------------------------------------------------->
 
@@ -170,7 +166,7 @@ public class ComparteHogar extends AppCompatActivity implements
             //name.setText(getString(R.string.signed_in_fmt, account.getDisplayName()));
             this.account = account;
         } else {
-           // ((TextView) findViewById(R.id.tv_sign_status)).setText(R.string.signed_in_err);
+            // ((TextView) findViewById(R.id.tv_sign_status)).setText(R.string.signed_in_err);
         }
     }
 //<---------------------------------Googgle--------------------------------------------------------<
@@ -191,7 +187,6 @@ public class ComparteHogar extends AppCompatActivity implements
     /**
      * @param item objetos declarado en menu_contex
      * @return devuele el metodo segun elboton seleccionado
-     * @see menu_contex.xml
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -278,10 +273,13 @@ public class ComparteHogar extends AppCompatActivity implements
         switch (v.getId()) {
 
             case R.id.buttonComparte:
+                Intent intentAniadir = new Intent(ComparteHogar.this, AniadirProducto.class);
+                startActivity(intentAniadir);
 
                 break;
             case R.id.buttonSolicita:
-
+                Intent intentMaps = new Intent(ComparteHogar.this, MapsActivity.class);
+                startActivity(intentMaps);
                 break;
 
             case R.id.fotoCocina:
@@ -289,6 +287,7 @@ public class ComparteHogar extends AppCompatActivity implements
                 t_Cocina.setText("Has pulsado en la cocina");
                 t_Cocina.show();
                 btnComparte.setEnabled(true);
+                btnSolicita.setEnabled(true);
                 break;
 
             case R.id.fotoBricolaje:
@@ -296,13 +295,15 @@ public class ComparteHogar extends AppCompatActivity implements
                 t_Bricolaje.setText("Has pulsado en el bricolaje");
                 t_Bricolaje.show();
                 btnComparte.setEnabled(true);
-                btnComparte.setActivated(false);
+                btnSolicita.setEnabled(true);
                 break;
             case R.id.fotoJardin:
                 Toast t_Jardin = new Toast(contexto);
                 t_Jardin.setText("Has pulsado en el jardín");
                 t_Jardin.show();
+
                 btnComparte.setEnabled(false);
+                btnSolicita.setEnabled(true);
                 break;
 
             case R.id.fotoMecanica:
@@ -310,6 +311,7 @@ public class ComparteHogar extends AppCompatActivity implements
                 t_Mecanica.setText("Has pulsado en la mecánica");
                 t_Mecanica.show();
                 btnComparte.setEnabled(true);
+                btnSolicita.setEnabled(true);
                 break;
 
             case R.id.chipHogar:
@@ -320,6 +322,10 @@ public class ComparteHogar extends AppCompatActivity implements
                 break;
             case R.id.chipOtros:
 
+                break;
+            case R.id.fab:
+                Intent intentGlobal = new Intent(ComparteHogar.this, MapsActivity.class);
+                startActivity(intentGlobal);
                 break;
         }
     }

@@ -19,6 +19,7 @@ public class AniadirProducto extends AppCompatActivity {
     private Button btnAniadir;
     private EditText etTitulo;
     private EditText etDescripcion;
+    private String categoría;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,7 @@ public class AniadirProducto extends AppCompatActivity {
         imagen = findViewById(R.id.imagenProducto);
         etTitulo = findViewById(R.id.etTitulo);
         etDescripcion = findViewById(R.id.DescripcionProducto);
+
         imagen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,7 +45,7 @@ public class AniadirProducto extends AppCompatActivity {
         btnAniadir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Producto p = new Producto(etTitulo.getText().toString(), etDescripcion.getText().toString(), imageUri);
+                Producto p = new Producto(etTitulo.getText().toString(), etDescripcion.getText().toString(), imageUri, true);
             }
         });
     }
