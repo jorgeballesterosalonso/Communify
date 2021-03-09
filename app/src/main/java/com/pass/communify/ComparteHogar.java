@@ -29,6 +29,8 @@ import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.chip.Chip;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Calendar;
 
@@ -45,6 +47,7 @@ public class ComparteHogar extends AppCompatActivity implements
     private TextView mStatusTextView; //Google
     private TextView name; //Pruebas de boton del modal
     private GoogleSignInAccount account;
+
 
     LoginActivity loginCursor = new LoginActivity(); //Puebas objeto login, llamada de metodos
     Button btnComparte = null;
@@ -174,7 +177,6 @@ public class ComparteHogar extends AppCompatActivity implements
         }
     }
 //<---------------------------------Googgle--------------------------------------------------------<
-
 //>---------------------------------Menu AppBa----------------------------------------------------->
 
     /**
@@ -205,6 +207,7 @@ public class ComparteHogar extends AppCompatActivity implements
             Toast toast = Toast.makeText(this, "Cerrando Sesion", Toast.LENGTH_LONG);
             toast.show();
             revokeAccess();
+            FirebaseAuth.getInstance().signOut();
             Intent intent = new Intent(ComparteHogar.this, LoginActivity.class);
             startActivity(intent);
             return true;
@@ -219,15 +222,29 @@ public class ComparteHogar extends AppCompatActivity implements
         }
 
         if (id == R.id.user) {
-            Toast toast = Toast.makeText(this, "Usuario conectado", Toast.LENGTH_LONG);
-            toast.show();
-            showAlertDialogButtonClicked(ComparteHogar.this);
+
+            if (account != null) {
+                showAlertDialogButtonClicked(ComparteHogar.this);
+                Toast toast = Toast.makeText(this, "Usuario conectado", Toast.LENGTH_LONG);
+                toast.show();
+            }else {
+                Toast toast2 = Toast.makeText(this, "Solo con google", Toast.LENGTH_LONG);
+                toast2.show();
+            }
+
+
             return true;
         }
         if (id == R.id.compartir) {
             Toast toast = Toast.makeText(this, "Compartir", Toast.LENGTH_LONG);
             toast.show();
 
+            return true;
+        }
+        if (id == R.id.chatbox) {
+            Toast toast = Toast.makeText(this, "ChatBox", Toast.LENGTH_LONG);
+            toast.show();
+            //poner aqui el intent para el chatbox
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -243,7 +260,9 @@ public class ComparteHogar extends AppCompatActivity implements
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         View vista = getLayoutInflater().inflate(R.layout.alertdialog_view, null);
         TextView tv = vista.findViewById(R.id.name);
-        tv.setText(getString(R.string.signed_in_fmt, account.getDisplayName()));
+
+            tv.setText(getString(R.string.signed_in_fmt, account.getDisplayName()));
+
         builder.setView(vista);
         // add the buttons
         builder.setPositiveButton("name", new DialogInterface.OnClickListener() {

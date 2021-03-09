@@ -24,9 +24,11 @@
         android:id="@+id/imageView3"
         android:layout_width="130dp"
         android:layout_height="100dp"
-        android:layout_marginTop="54dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginBottom="13dp"
+        app:layout_constraintBottom_toTopOf="@+id/nombreyape"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.426"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logocommunify" />
@@ -40,6 +42,7 @@
         android:hint="@string/nombre_apeSingUp"
         android:textColorHint="@color/Communify_textos_oscuros"
         app:hintTextColor="@color/Communify_textos_oscuros"
+        app:layout_constraintBottom_toTopOf="@+id/userCorreo"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintStart_toStartOf="@id/guideline3"
         app:layout_constraintTop_toBottomOf="@+id/imageView3">
@@ -54,18 +57,45 @@
             android:textStyle="bold" />
 
 
-
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/email"
+        android:id="@+id/ti_email"
         android:layout_width="0dp"
-        android:layout_height="53dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="0dp"
         android:alpha="0.8"
         android:background="@android:color/white"
         android:hint="@string/Email"
         android:textColorHint="@color/Communify_textos_oscuros"
         app:hintTextColor="@color/Communify_textos_oscuros"
+        app:layout_constraintBottom_toTopOf="@+id/ti_passworldTIL"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/userCorreo">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ti_correo2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/Communify_White"
+            android:textColor="@color/Communify_Textos_teal"
+            android:textStyle="bold" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/userCorreo"
+        android:layout_width="0dp"
+        android:layout_height="53dp"
+        android:layout_marginBottom="4dp"
+        android:alpha="0.8"
+        android:background="@color/Communify_White"
+        android:hint="@string/UsuarioSignUp"
+        android:textColorHint="@color/Communify_textos_oscuros"
+        app:hintTextColor="@color/Communify_textos_oscuros"
+        app:layout_constraintBottom_toTopOf="@+id/ti_email"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintStart_toStartOf="@id/guideline3"
         app:layout_constraintTop_toBottomOf="@+id/nombreyape">
@@ -76,78 +106,60 @@
             android:background="@color/Communify_White"
             android:textColor="@color/Communify_Textos_teal"
             android:textStyle="bold" />
-
-
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/usernameTIL"
+        android:id="@+id/ti_passworldTIL"
         android:layout_width="0dp"
-        android:layout_height="53dp"
-        android:alpha="0.8"
-        android:background="@color/Communify_White"
-        android:hint="@string/UsuarioSignUp"
-        android:textColorHint="@color/Communify_textos_oscuros"
-        app:hintTextColor="@color/Communify_textos_oscuros"
-        app:layout_constraintEnd_toEndOf="@id/guideline2"
-        app:layout_constraintStart_toStartOf="@id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/email">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/Communify_White"
-            android:textColor="@color/Communify_Textos_teal"
-            android:textStyle="bold" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/passworldTIL"
-        android:layout_width="0dp"
-        android:layout_height="53dp"
+        android:layout_height="58dp"
+        android:layout_marginBottom="60dp"
+        android:layout_marginTop="0dp"
         android:alpha="0.8"
         android:background="@android:color/white"
         android:hint="@string/PasswordSignUp"
         android:textColorHint="@color/Communify_textos_oscuros"
         app:hintTextColor="@color/Communify_textos_oscuros"
+        app:layout_constraintBottom_toTopOf="@+id/btn_login"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintStart_toStartOf="@id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/usernameTIL">
+        app:layout_constraintTop_toBottomOf="@+id/ti_email">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ti_pass2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/Communify_White"
             android:textColor="@color/Communify_Textos_teal"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
+
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_Login"
+        android:id="@+id/btn_login"
         android:layout_width="0dp"
         android:layout_height="54dp"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="250dp"
         android:alpha="0.8"
-        android:text="@string/BtnRegistrarse"
         android:backgroundTint="@color/Communify_BotonesPrincipales"
+        android:text="@string/BtnRegistrarse"
         android:textColor="@color/Communify_White"
+        app:layout_constraintBottom_toTopOf="@+id/tv_Registro"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/passworldTIL" />
+        app:layout_constraintTop_toBottomOf="@+id/ti_passworldTIL" />
 
     <TextView
         android:id="@+id/tv_Registro"
         android:layout_width="0dp"
         android:layout_height="48dp"
-        android:layout_marginTop="540dp"
+        android:layout_marginBottom="76dp"
         android:gravity="center_horizontal"
         android:text="@string/txtSignup"
         android:textAlignment="center"
         android:textColor="@color/Communify_Textos_teal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@id/guideline3"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="@id/guideline3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
