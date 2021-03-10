@@ -47,7 +47,7 @@ public class ComparteHogar extends AppCompatActivity implements
     private TextView mStatusTextView; //Google
     private TextView name; //Pruebas de boton del modal
     private GoogleSignInAccount account;
-
+    private Button btnSolicita;
 
     LoginActivity loginCursor = new LoginActivity(); //Puebas objeto login, llamada de metodos
     Button btnComparte = null;
@@ -66,6 +66,8 @@ public class ComparteHogar extends AppCompatActivity implements
 
         btnComparte = findViewById(R.id.buttonComparte);
         btnComparte.setEnabled(false);
+        btnSolicita = findViewById(R.id.buttonSolicita);
+        btnSolicita.setEnabled(false);
 //>---------------------------------Googgle-------------------------------------------------------->
         name = findViewById(R.id.name);
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -87,6 +89,7 @@ public class ComparteHogar extends AppCompatActivity implements
         findViewById(R.id.chipHogar).setOnClickListener(this);
         findViewById(R.id.chipSocial).setOnClickListener(this);
         findViewById(R.id.chipOtros).setOnClickListener(this);
+        findViewById(R.id.fab).setOnClickListener(this);
     }
     //>---------------------------------Googgle-------------------------------------------------------->
 
@@ -307,7 +310,8 @@ public class ComparteHogar extends AppCompatActivity implements
 
                 break;
             case R.id.buttonSolicita:
-
+                Intent intentMaps = new Intent(ComparteHogar.this, MapsActivity.class);
+                startActivity(intentMaps);
                 break;
 
             case R.id.fotoCocina:
@@ -346,6 +350,10 @@ public class ComparteHogar extends AppCompatActivity implements
                 break;
             case R.id.chipOtros:
 
+                break;
+            case R.id.fab:
+                Intent intentGlobal = new Intent(ComparteHogar.this, MapsActivity.class);
+                startActivity(intentGlobal);
                 break;
         }
     }
