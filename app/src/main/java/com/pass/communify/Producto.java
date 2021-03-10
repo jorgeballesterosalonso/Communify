@@ -2,35 +2,58 @@ package com.pass.communify;
 
 import android.net.Uri;
 
+import com.google.android.gms.maps.model.LatLng;
+
 
 public class Producto {
+    private String nombreUsuario, email;
+    private LatLng posicion;
+    private Double lat;
     private String titulo;
     private String descripcion;
     private Uri uri;
-    private boolean esCompartido;
 
-    public boolean isEsCompartido() {
-        return esCompartido;
+    public Producto(String nombreUsuario, LatLng posicion,Double lat ) {
+        this.nombreUsuario = nombreUsuario;
+        this.posicion = posicion;
+        this.lat = lat;
     }
 
-    public void setEsCompartido(boolean esCompartido) {
-        this.esCompartido = esCompartido;
+
+
+    public Producto() {
     }
 
-    public Producto(String titulo, String descripcion, Uri uri, boolean esCompartido) {
+    public Producto(String titulo, String descripcion, Uri uri) {
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.uri = uri;
-        this.esCompartido = esCompartido;
     }
 
-    @Override
-    public String toString() {
-        return "Producto{" +
-                "titulo='" + titulo + '\'' +
-                ", descripcion='" + descripcion + '\'' +
-                ", uri=" + uri +
-                '}';
+    public Producto(String nombreUsuario, String email, String titulo, String descripcion, Uri uri) {
+        this.nombreUsuario = nombreUsuario;
+        this.email = email;
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.uri = uri;
+
+    }
+
+
+    public String getNombreUsuario() {
+        return nombreUsuario;
+    }
+
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getTitulo() {
@@ -55,5 +78,16 @@ public class Producto {
 
     public void setUri(Uri uri) {
         this.uri = uri;
+    }
+
+    @Override
+    public String toString() {
+        return "Producto{" +
+                "nombreUsuario='" + nombreUsuario + '\'' +
+                ", email='" + email + '\'' +
+                ", titulo='" + titulo + '\'' +
+                ", descripcion='" + descripcion + '\'' +
+                ", uri=" + uri +
+                '}';
     }
 }
