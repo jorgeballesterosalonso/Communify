@@ -239,12 +239,23 @@ public class ComparteHogar extends AppCompatActivity implements
             Toast toast = Toast.makeText(this, "Compartir", Toast.LENGTH_LONG);
             toast.show();
 
+
+            Intent compartir = new Intent(android.content.Intent.ACTION_SEND);
+            compartir.setType("text/plain");
+            //String mensaje = R.string.compartir;
+            compartir.putExtra(android.content.Intent.EXTRA_SUBJECT, "Communify App");
+            compartir.putExtra(android.content.Intent.EXTRA_TEXT, getString(R.string.Compartir));
+            startActivity(Intent.createChooser(compartir, "Compartir vía"));
+
+
             return true;
         }
         if (id == R.id.chatbox) {
             Toast toast = Toast.makeText(this, "ChatBox", Toast.LENGTH_LONG);
             toast.show();
             //poner aqui el intent para el chatbox
+            Intent intent = new Intent(ComparteHogar.this, ChatBot.class);
+            startActivity(intent);
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -345,6 +356,9 @@ public class ComparteHogar extends AppCompatActivity implements
 
                 break;
             case R.id.chipOtros:
+
+                break;
+            case R.id.chatbox:
 
                 break;
         }
