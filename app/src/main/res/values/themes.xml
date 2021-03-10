@@ -16,6 +16,7 @@
         <item name="android:textColor">@color/Communify_Textos_teal</item>
         <item name="hintTextColor">@color/Communify_textos_oscuros</item>
 
+
     </style>
     <style name="Theme.Communify.SinBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->

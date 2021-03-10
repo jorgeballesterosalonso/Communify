@@ -1,5 +1,6 @@
 package com.pass.communify;
 
+import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +10,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +25,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -39,6 +43,7 @@ public class LoginActivity extends AppCompatActivity implements
     private FirebaseUser currentUser;
     private TextInputEditText correo;
     private TextInputEditText pass;
+    private TextInputLayout layaout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +57,7 @@ public class LoginActivity extends AppCompatActivity implements
         btn_Login = findViewById(R.id.btn_login);
         correo = findViewById(R.id.ti_correo);
         pass = findViewById(R.id.ti_pass);
+
 
 
         //Configuracion de login con Google.
@@ -246,6 +252,8 @@ public class LoginActivity extends AppCompatActivity implements
                     } else {
                         Toast.makeText(LoginActivity.this, "La contraseña debe tener una longitud superior a 6 caracteres",
                                 Toast.LENGTH_SHORT).show();
+                        //layaout.setBackground(R.drawable.);
+
                     }
                 } else {
 

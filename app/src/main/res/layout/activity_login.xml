@@ -75,6 +75,7 @@
             android:layout_height="match_parent"
             android:background="@color/Communify_White"
             android:textColor="@color/Communify_Textos_teal"
+            android:password="true"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -110,7 +111,6 @@
 
 
         />
-
 
 
 
