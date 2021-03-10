@@ -87,6 +87,10 @@
     <string name="EscribeAqui">Escribe aquí...</string>
     <string name="DescripcionProducto">Escribe un título para el producto</string>
     <string name="TituloProducto">Añade un título al producto</string>
+    <string name="CuidadoPersonasMayores">Cuidado de personas mayores</string>
+    <string name="BuscarAmigos">Buscar amigos</string>
+    <string name="SalirFiesta">Salir de fiesta</string>
+    <string name="HacerCompra">Hacer la compra</string>
 
 
 </resources>

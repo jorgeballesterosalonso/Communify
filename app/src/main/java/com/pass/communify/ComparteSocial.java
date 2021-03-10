@@ -28,9 +28,9 @@ import com.google.firebase.auth.FirebaseAuth;
 /**
  * Esta es la clase
  */
-public class ComparteHogar extends AppCompatActivity implements
+public class ComparteSocial extends AppCompatActivity implements
         View.OnClickListener {
-    ComparteHogar contexto = this;
+    ComparteSocial contexto = this;
     private TextView nombre;
     private GoogleSignInClient mGoogleSignInClient;//Google
     private final String TAG = "SignInActivity";//Google
@@ -51,7 +51,7 @@ public class ComparteHogar extends AppCompatActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_comparte_hogar);
+        setContentView(R.layout.activity_comparte_social);
 
         //Inicializamos variables
 
@@ -73,10 +73,10 @@ public class ComparteHogar extends AppCompatActivity implements
          */
         findViewById(R.id.buttonComparte).setOnClickListener(this);
         findViewById(R.id.buttonSolicita).setOnClickListener(this);
-        findViewById(R.id.fotoCocina).setOnClickListener(this);
-        findViewById(R.id.fotoBricolaje).setOnClickListener(this);
-        findViewById(R.id.fotoJardin).setOnClickListener(this);
-        findViewById(R.id.fotoMecanica).setOnClickListener(this);
+        findViewById(R.id.fotoAbuelos).setOnClickListener(this);
+        findViewById(R.id.fotoAmigos).setOnClickListener(this);
+        findViewById(R.id.fotoCompra).setOnClickListener(this);
+        findViewById(R.id.fotoFiesta).setOnClickListener(this);
         findViewById(R.id.chipHogar).setOnClickListener(this);
         findViewById(R.id.chipSocial).setOnClickListener(this);
         findViewById(R.id.chipOtros).setOnClickListener(this);
@@ -202,7 +202,7 @@ public class ComparteHogar extends AppCompatActivity implements
             toast.show();
             revokeAccess();
             FirebaseAuth.getInstance().signOut();
-            Intent intent = new Intent(ComparteHogar.this, LoginActivity.class);
+            Intent intent = new Intent(ComparteSocial.this, LoginActivity.class);
             startActivity(intent);
             return true;
         }
@@ -218,7 +218,7 @@ public class ComparteHogar extends AppCompatActivity implements
         if (id == R.id.user) {
 
             if (account != null) {
-                showAlertDialogButtonClicked(ComparteHogar.this);
+                showAlertDialogButtonClicked(ComparteSocial.this);
                 Toast toast = Toast.makeText(this, "Usuario conectado", Toast.LENGTH_LONG);
                 toast.show();
             } else {
@@ -249,7 +249,7 @@ public class ComparteHogar extends AppCompatActivity implements
     /**
      * @param view lanza el modal con la siguentes opciones y botones
      */
-    public void showAlertDialogButtonClicked(ComparteHogar view) {
+    public void showAlertDialogButtonClicked(ComparteSocial view) {
         // setup the alert builder
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         View vista = getLayoutInflater().inflate(R.layout.alertdialog_view, null);
@@ -271,7 +271,7 @@ public class ComparteHogar extends AppCompatActivity implements
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 // do something like...
-                Intent intent = new Intent(ComparteHogar.this, About.class);
+                Intent intent = new Intent(ComparteSocial.this, About.class);
                 startActivity(intent);
                 dialog.dismiss();
             }
@@ -301,50 +301,50 @@ public class ComparteHogar extends AppCompatActivity implements
 
                 break;
             case R.id.buttonSolicita:
-                Intent intentMaps = new Intent(ComparteHogar.this, MapsActivity.class);
+                Intent intentMaps = new Intent(ComparteSocial.this, MapsActivity.class);
                 startActivity(intentMaps);
                 break;
 
-            case R.id.fotoCocina:
+            case R.id.fotoCompra:
                 Toast t_Cocina = new Toast(contexto);
-                t_Cocina.setText("Has pulsado en la cocina");
+                t_Cocina.setText("Has pulsado en la compra");
                 t_Cocina.show();
                 btnComparte.setEnabled(true);
                 break;
 
-            case R.id.fotoBricolaje:
+            case R.id.fotoAbuelos:
                 Toast t_Bricolaje = new Toast(contexto);
-                t_Bricolaje.setText("Has pulsado en el bricolaje");
+                t_Bricolaje.setText("Has pulsado en los abuelos");
                 t_Bricolaje.show();
                 btnComparte.setEnabled(true);
                 btnComparte.setActivated(false);
                 break;
-            case R.id.fotoJardin:
+            case R.id.fotoAmigos:
                 Toast t_Jardin = new Toast(contexto);
-                t_Jardin.setText("Has pulsado en el jardín");
+                t_Jardin.setText("Has pulsado en los amigos");
                 t_Jardin.show();
                 btnComparte.setEnabled(false);
                 break;
 
-            case R.id.fotoMecanica:
+            case R.id.fotoFiesta:
                 Toast t_Mecanica = new Toast(contexto);
-                t_Mecanica.setText("Has pulsado en la mecánica");
+                t_Mecanica.setText("Has pulsado en la fiesta");
                 t_Mecanica.show();
                 btnComparte.setEnabled(true);
                 break;
 
             case R.id.chipHogar:
-
+                Intent intentHogar = new Intent(ComparteSocial.this, ComparteHogar.class);
+                startActivity(intentHogar);
                 break;
             case R.id.chipSocial:
-                Intent intentSocial = new Intent(ComparteHogar.this, ComparteSocial.class);
-                startActivity(intentSocial);
+
                 break;
             case R.id.chipOtros:
 
                 break;
             case R.id.fab:
-                Intent intentGlobal = new Intent(ComparteHogar.this, MapsActivity.class);
+                Intent intentGlobal = new Intent(ComparteSocial.this, MapsActivity.class);
                 startActivity(intentGlobal);
                 break;
         }
