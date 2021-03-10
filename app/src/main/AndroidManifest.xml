@@ -11,25 +11,24 @@
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.CAMERA" />
+
 
     <application
         android:allowBackup="true"
-        android:usesCleartextTraffic="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Communify">
-        <activity android:name=".About"
-            android:theme="@style/Theme.Communify"
-            android:parentActivityName=".ComparteHogar">
-            </activity>
-        <activity android:name=".ChatBot"
-            android:theme="@style/Theme.Communify"
-            android:parentActivityName=".ComparteHogar">
-        </activity>
-
+        android:theme="@style/Theme.Communify"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".About"
+            android:parentActivityName=".ComparteHogar"
+            android:theme="@style/Theme.Communify"></activity>
+        <activity
+            android:name=".ChatBot"
+            android:parentActivityName=".ComparteHogar"
+            android:theme="@style/Theme.Communify"></activity>
 
 
         <activity android:name=".RegisterActivity" />
@@ -37,10 +36,19 @@
             android:name=".LoginActivity"
             android:theme="@style/Theme.Communify.SinBar" />
         <activity android:name=".ElectionActivity" />
-        <activity android:name=".AniadirProducto" android:parentActivityName=".ComparteHogar"/>
-        <activity android:name=".MapsActivity"
-            android:theme="@style/Theme.Communify"
+        <activity
+            android:name=".AniadirProducto"
             android:parentActivityName=".ComparteHogar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MapsActivity"
+            android:parentActivityName=".ComparteHogar"
+            android:theme="@style/Theme.Communify">
             <!--
                  The API key for Google Maps-based APIs is defined as a string resource.
                  (See the file "res/values/google_maps_api.xml").
@@ -60,15 +68,11 @@
         <activity
             android:name=".Splash"
             android:theme="@style/Theme.Communify.SinBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
 
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
