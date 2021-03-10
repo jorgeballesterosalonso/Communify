@@ -3,7 +3,6 @@
     package="com.pass.communify">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -15,6 +14,7 @@
 
     <application
         android:allowBackup="true"
+        android:usesCleartextTraffic="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -30,6 +30,7 @@
         <activity android:name=".ElectionActivity" />
         <activity android:name=".AniadirProducto" android:parentActivityName=".ComparteHogar"></activity>
         <activity android:name=".MapsActivity">
+
             <!--
                  The API key for Google Maps-based APIs is defined as a string resource.
                  (See the file "res/values/google_maps_api.xml").
@@ -45,10 +46,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".ComparteHogar">
-
-
-        </activity>
+        <activity android:name=".ComparteHogar" />
         <activity
             android:name=".Splash"
             android:theme="@style/Theme.Communify.SinBar">
@@ -60,7 +58,7 @@
 
         </activity>
 
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity"/>
     </application>
 
 </manifest>
