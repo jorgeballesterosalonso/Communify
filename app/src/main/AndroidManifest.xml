@@ -25,6 +25,13 @@
             android:theme="@style/Theme.Communify"
             android:parentActivityName=".ComparteHogar">
             </activity>
+        <activity android:name=".ChatBot"
+            android:theme="@style/Theme.Communify"
+            android:parentActivityName=".ComparteHogar">
+        </activity>
+
+
+
         <activity android:name=".RegisterActivity" />
         <activity
             android:name=".LoginActivity"
