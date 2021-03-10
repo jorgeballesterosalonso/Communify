@@ -36,7 +36,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/nombreyape"
         android:layout_width="0dp"
-        android:layout_height="56dp"
+        android:layout_height="60dp"
         android:layout_marginTop="13dp"
         android:alpha="0.8"
         android:hint="@string/nombre_apeSingUp"
@@ -62,7 +62,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/ti_email"
         android:layout_width="0dp"
-        android:layout_height="58dp"
+        android:layout_height="60dp"
         android:layout_marginTop="0dp"
         android:alpha="0.8"
         android:background="@android:color/white"
@@ -88,7 +88,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/userCorreo"
         android:layout_width="0dp"
-        android:layout_height="53dp"
+        android:layout_height="60dp"
         android:layout_marginBottom="4dp"
         android:alpha="0.8"
         android:background="@color/Communify_White"
@@ -111,7 +111,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/ti_passworldTIL"
         android:layout_width="0dp"
-        android:layout_height="58dp"
+        android:layout_height="60dp"
         android:layout_marginBottom="60dp"
         android:layout_marginTop="0dp"
         android:alpha="0.8"
