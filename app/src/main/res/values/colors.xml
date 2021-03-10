@@ -13,5 +13,6 @@
     <color name="Communify_Textos_teal">#FF03DAC5</color>
     <color name="Communify_Bar">#149C94</color><!--   -->
     <color name="Communify_textos_oscuros">#0A6863</color><!--   -->
+    <color name="Communify_rojo">#FF0000</color>
 
 </resources>

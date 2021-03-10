@@ -34,12 +34,12 @@
         app:srcCompat="@drawable/logocommunify" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/usernameTIL"
+        android:id="@+id/userCorreo"
         android:layout_width="0dp"
         android:layout_height="56dp"
         android:layout_marginTop="63dp"
         android:alpha="0.8"
-        android:hint="Username"
+        android:hint="Correo Electronico"
         android:textColorHint="@color/Communify_textos_oscuros"
         app:counterTextColor="@color/Communify_textos_oscuros"
         app:hintTextColor="@color/Communify_textos_oscuros"
@@ -48,6 +48,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView3">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ti_correo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/Communify_White"
@@ -57,7 +58,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/passworldTIL"
+        android:id="@+id/ti_passworldTIL"
         android:layout_width="0dp"
         android:layout_height="56dp"
         android:alpha="0.8"
@@ -66,18 +67,20 @@
         app:hintTextColor="@color/Communify_textos_oscuros"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintStart_toStartOf="@id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/usernameTIL">
+        app:layout_constraintTop_toBottomOf="@+id/userCorreo">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ti_pass"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/Communify_White"
             android:textColor="@color/Communify_Textos_teal"
+            android:password="true"
             android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_Login"
+        android:id="@+id/btn_login"
         android:layout_width="0dp"
         android:layout_height="54dp"
         android:layout_marginTop="16dp"
@@ -90,7 +93,7 @@
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/passworldTIL" />
+        app:layout_constraintTop_toBottomOf="@+id/ti_passworldTIL" />
 
     <TextView
         android:id="@+id/tv_Registro"
@@ -108,7 +111,6 @@
 
 
         />
-
 
 
 

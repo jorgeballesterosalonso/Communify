@@ -24,14 +24,24 @@
         android:id="@+id/Close"
         android:title="Salir"
         app:showAsAction="withText" />
-
-
+    <item
+        android:id="@+id/chatbox"
+        android:icon="@drawable/ic_chatbox_foreground"
+        app:showAsAction="always|withText"
+        android:title="" />
+    <item
+        android:id="@+id/compartir"
+        android:icon="@drawable/ic_compartir_foreground"
+        app:showAsAction="always|withText"
+        android:title="" />
             android:title="Toca para apagar el telefono" />
         <item
             android:id="@+id/user"
             android:icon="@drawable/ic_user_foreground"
             app:showAsAction="always|withText"
             android:title="" />
+
+
 
 
 </menu>
