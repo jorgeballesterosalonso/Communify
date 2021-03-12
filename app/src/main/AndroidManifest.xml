@@ -39,11 +39,7 @@
         <activity
             android:name=".AniadirProducto"
             android:parentActivityName=".ComparteHogar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".MapsActivity"
@@ -69,7 +65,11 @@
             android:name=".Splash"
             android:theme="@style/Theme.Communify.SinBar">
 
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <activity android:name=".MainActivity" />
