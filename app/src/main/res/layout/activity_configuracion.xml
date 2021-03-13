@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ConfiguracionActivity">
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="42dp" />
+    <TextView
+        android:id="@+id/tvSonido"
+        android:layout_width="124dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="60dp"
+        android:text="Sonido"
+        android:textColor="#0A6863"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/guideline3"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="124dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="4dp"
+        android:text="Silenciar"
+        android:textColor="#149C94"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="4dp" />
+
+    <Switch
+        android:id="@+id/switch2"
+        android:layout_width="124dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="116dp"
+        android:layout_marginEnd="4dp"
+        android:text="Vibración"
+        android:textColor="#149C94"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tVVol3"
+        android:layout_width="60dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="144dp"
+        android:text="Volumen"
+        android:textColor="#149C94"
+        app:layout_constraintStart_toStartOf="@id/guideline3"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SeekBar
+        android:id="@+id/seekBarV"
+        android:layout_width="121dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvPntalla"
+        android:layout_width="124dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="172dp"
+        android:text="Pantalla"
+        android:textColor="#0A6863"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/guideline3"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tVBril"
+        android:layout_width="60dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="188dp"
+        android:text="Brillo"
+        android:textColor="#149C94"
+        app:layout_constraintStart_toStartOf="@id/guideline3"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SeekBar
+        android:id="@+id/seekBril"
+        android:layout_width="121dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="188dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tVCont"
+        android:layout_width="79dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="220dp"
+        android:text="Contraste"
+        android:textColor="#149C94"
+        app:layout_constraintStart_toStartOf="@id/guideline3"
+        app:layout_constraintTop_toTopOf="parent" />
+    <SeekBar
+        android:id="@+id/seekBarCont"
+        android:layout_width="121dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="216dp"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTeclado"
+        android:layout_width="124dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="244dp"
+        android:text="Teclado"
+        android:textColor="#0A6863"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/guideline3"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioButton
+        android:id="@+id/radButtonAut"
+        android:layout_width="142dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="272dp"
+        android:layout_marginEnd="4dp"
+        android:text="Autocorrección"
+        android:textColor="#149C94"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="4dp" />
+
+    <RadioButton
+        android:id="@+id/radMay"
+        android:layout_width="142dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginEnd="4dp"
+        android:text="Mayúsculas"
+        android:textColor="#149C94"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="4dp" />
+
+    <RadioButton
+        android:id="@+id/radPre"
+        android:layout_width="142dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="328dp"
+        android:layout_marginEnd="4dp"
+        android:text="Predictivo"
+        android:textColor="#149C94"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="4dp" />
+
+    <RadioButton
+        android:id="@+id/radBlo"
+        android:layout_width="142dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="360dp"
+        android:layout_marginEnd="4dp"
+        android:text="Bloqueo"
+        android:textColor="#149C94"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="4dp" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="182dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="408dp"
+        android:entries="@array/lenguajes"
+        android:textColor="#0A6863"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/guideline3"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -78,8 +78,17 @@
     <string name="server_client_id">Communify</string>
     <!---->
 
-        <string name="sign">This is an <u>underline</u>.</string>
-
+    <string name="sign">This is an <u>underline</u>.</string>
+    <string-array name="lenguajes">
+        <item>Idiomas</item>
+        <item>English</item>
+        <item>French</item>
+        <item>German</item>
+        <item>Italian</item>
+        <item>Japanese</item>
+        <item>Spanish</item>
+        <item>Russian</item>
+    </string-array>
 
 
 </resources>
