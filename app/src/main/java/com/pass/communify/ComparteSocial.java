@@ -314,12 +314,14 @@ public class ComparteSocial extends AppCompatActivity implements
                 break;
             case R.id.buttonSolicita:
                 Intent intentMaps = new Intent(ComparteSocial.this, MapsActivity.class);
+                intentMaps.putExtra("categoria",categoria);
                 startActivity(intentMaps);
                 break;
 
             case R.id.fotoCompra:
 
                 btnComparte.setEnabled(true);
+                btnSolicita.setEnabled(true);
                 categoria = Categoría.COMPRA;
                 imagenCompra.setColorFilter(R.color.Communify_White);
                 imagenFiesta.setColorFilter(null);
@@ -330,6 +332,7 @@ public class ComparteSocial extends AppCompatActivity implements
             case R.id.fotoAbuelos:
 
                 btnComparte.setEnabled(true);
+                btnSolicita.setEnabled(true);
                 categoria = Categoría.PERSONAS_MAYORES;
                 imagenAmigos.setColorFilter(null);
                 imagenFiesta.setColorFilter(null);
@@ -340,6 +343,7 @@ public class ComparteSocial extends AppCompatActivity implements
             case R.id.fotoAmigos:
 
                 btnComparte.setEnabled(true);
+                btnSolicita.setEnabled(true);
                 categoria = Categoría.AMIGOS;
                 imagenCompra.setColorFilter(null);
                 imagenAbuelos.setColorFilter(null);
@@ -350,6 +354,7 @@ public class ComparteSocial extends AppCompatActivity implements
             case R.id.fotoFiesta:
 
                 btnComparte.setEnabled(true);
+                btnSolicita.setEnabled(true);
                 categoria = Categoría.FIESTA;
                 imagenFiesta.setColorFilter(R.color.Communify_White);
                 imagenCompra.setColorFilter(null);

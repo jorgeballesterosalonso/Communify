@@ -327,12 +327,14 @@ public class ComparteHogar extends AppCompatActivity implements
                 break;
             case R.id.buttonSolicita:
                 Intent intentMaps = new Intent(ComparteHogar.this, MapsActivity.class);
+                intentMaps.putExtra("categoria", categoría);
                 startActivity(intentMaps);
                 break;
 
             case R.id.fotoCocina:
 
                 btnComparte.setEnabled(true);
+                btnSolicita.setEnabled(true);
                 categoría = Categoría.COCINA;
                 imagenCocina.setColorFilter(R.color.Communify_White);
                 imagenBricolaje.setColorFilter(null);
@@ -343,7 +345,7 @@ public class ComparteHogar extends AppCompatActivity implements
             case R.id.fotoBricolaje:
 
                 btnComparte.setEnabled(true);
-                btnComparte.setActivated(false);
+                btnSolicita.setEnabled(true);
                 categoría = Categoría.BRICOLAJE;
                 imagenBricolaje.setColorFilter(R.color.Communify_White);
                 imagenCocina.setColorFilter(null);
@@ -353,6 +355,7 @@ public class ComparteHogar extends AppCompatActivity implements
             case R.id.fotoJardin:
 
                 btnComparte.setEnabled(false);
+                btnSolicita.setEnabled(true);
                 categoría = Categoría.JARDIN;
                 imagenJardin.setColorFilter(R.color.Communify_White);
                 imagenBricolaje.setColorFilter(null);
@@ -363,6 +366,7 @@ public class ComparteHogar extends AppCompatActivity implements
             case R.id.fotoMecanica:
 
                 btnComparte.setEnabled(true);
+                btnSolicita.setEnabled(true);
                 categoría = Categoría.MECANICA;
                 imagenMecanica.setColorFilter(R.color.Communify_White);
                 imagenBricolaje.setColorFilter(null);
