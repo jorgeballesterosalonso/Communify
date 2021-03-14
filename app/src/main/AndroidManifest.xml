@@ -12,7 +12,6 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -21,6 +20,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Communify"
         android:usesCleartextTraffic="true">
+        <activity android:name=".ConfiguracionActivity"/>
         <activity
             android:name=".About"
             android:parentActivityName=".ComparteHogar"
@@ -70,6 +70,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
 
         <activity android:name=".MainActivity" />

@@ -152,5 +152,13 @@
         app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="112dp"
+        android:layout_height="42dp"
+        android:text="menuOpcion"
+        tools:layout_editor_absoluteX="77dp"
+        tools:layout_editor_absoluteY="555dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -89,6 +89,17 @@
     <string name="TituloProducto">Añade un título al producto</string>
     <string name="Compartir">La mejor App para Compartir y poder recibir lo que comparten de forma gratuita\n <u><b>¡¡¡Share is love!!\n</b> </u><p>https://play.google.com/store?hl=es&amp;gl=ES</p></string>
 
+    <string name="sign">This is an <u>underline</u>.</string>
+    <string-array name="lenguajes">
+        <item>Idiomas</item>
+        <item>English</item>
+        <item>French</item>
+        <item>German</item>
+        <item>Italian</item>
+        <item>Japanese</item>
+        <item>Spanish</item>
+        <item>Russian</item>
+    </string-array>
 
 
 </resources>
