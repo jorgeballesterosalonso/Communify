@@ -203,8 +203,9 @@ public class ComparteSocial extends AppCompatActivity implements
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.Setting) {
-            Toast toast = Toast.makeText(this, "Proximamente", Toast.LENGTH_LONG);
-            toast.show();
+
+            Intent intent = new Intent(ComparteSocial.this, ConfiguracionActivity.class);
+            startActivity(intent);
             return true;
         }
         if (id == R.id.Log_off) {
@@ -240,15 +241,18 @@ public class ComparteSocial extends AppCompatActivity implements
             return true;
         }
         if (id == R.id.compartir) {
-            Toast toast = Toast.makeText(this, "Compartir", Toast.LENGTH_LONG);
-            toast.show();
 
+            Intent compartir = new Intent(android.content.Intent.ACTION_SEND);
+            compartir.setType("text/plain");
+            compartir.putExtra(android.content.Intent.EXTRA_SUBJECT, "Communify App");
+            compartir.putExtra(android.content.Intent.EXTRA_TEXT, getString(R.string.Compartir));
+            startActivity(Intent.createChooser(compartir, "Compartir vía"));
             return true;
         }
         if (id == R.id.chatbox) {
-            Toast toast = Toast.makeText(this, "ChatBox", Toast.LENGTH_LONG);
-            toast.show();
-            //poner aqui el intent para el chatbox
+
+            Intent intent = new Intent(ComparteSocial.this, ChatBot.class);
+            startActivity(intent);
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -314,7 +318,7 @@ public class ComparteSocial extends AppCompatActivity implements
                 break;
             case R.id.buttonSolicita:
                 Intent intentMaps = new Intent(ComparteSocial.this, MapsActivity.class);
-                intentMaps.putExtra("categoria",categoria);
+                intentMaps.putExtra("categoria", categoria);
                 startActivity(intentMaps);
                 break;
 
