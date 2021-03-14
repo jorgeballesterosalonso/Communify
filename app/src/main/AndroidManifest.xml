@@ -22,6 +22,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Communify">
         <activity android:name=".ComparteSocial"/>
+        <activity android:name=".ConfiguracionActivity" android:parentActivityName=".ComparteHogar"/>
+        <activity android:name=".ChatBot"/>
         <activity android:name=".About"
             android:theme="@style/Theme.Communify"
             android:parentActivityName=".ComparteHogar">

@@ -187,14 +187,15 @@ public class ComparteHogar extends AppCompatActivity implements
     /**
      * @param item objetos declarado en menu_contex
      * @return devuele el metodo segun elboton seleccionado
-     * @see menu_contex.xml
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.Setting) {
-            Toast toast = Toast.makeText(this, "Proximamente", Toast.LENGTH_LONG);
-            toast.show();
+            //Toast toast = Toast.makeText(this, "Proximamente", Toast.LENGTH_LONG);
+            //toast.show();
+            Intent intent = new Intent(ComparteHogar.this, ConfiguracionActivity.class);
+            startActivity(intent);
             return true;
         }
         if (id == R.id.Log_off) {
@@ -309,7 +310,8 @@ public class ComparteHogar extends AppCompatActivity implements
         switch (v.getId()) {
 
             case R.id.buttonComparte:
-
+                Intent intent = new Intent(ComparteHogar.this,AniadirProducto.class);
+                startActivity(intent);
                 break;
             case R.id.buttonSolicita:
                 Intent intentMaps = new Intent(ComparteHogar.this, MapsActivity.class);

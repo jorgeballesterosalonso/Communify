@@ -8,6 +8,15 @@ public class Producto {
     private String descripcion;
     private Uri uri;
     private boolean esCompartido;
+    private Categoría categoría;
+
+    public Categoría getCategoría() {
+        return categoría;
+    }
+
+    public void setCategoría(Categoría categoría) {
+        this.categoría = categoría;
+    }
 
     public boolean isEsCompartido() {
         return esCompartido;
