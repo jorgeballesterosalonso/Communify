@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,6 +41,11 @@ public class ComparteSocial extends AppCompatActivity implements
     private GoogleSignInAccount account;
     private Button btnSolicita;
     private Categoría categoria;
+    private ImageView imagenAbuelos;
+    private ImageView imagenCompra;
+    private ImageView imagenAmigos;
+    private ImageView imagenFiesta;
+
 
     LoginActivity loginCursor = new LoginActivity(); //Puebas objeto login, llamada de metodos
     Button btnComparte = null;
@@ -60,6 +66,10 @@ public class ComparteSocial extends AppCompatActivity implements
         btnComparte.setEnabled(false);
         btnSolicita = findViewById(R.id.buttonSolicita);
         btnSolicita.setEnabled(false);
+        imagenAbuelos = findViewById(R.id.fotoAbuelos);
+        imagenAmigos = findViewById(R.id.fotoAmigos);
+        imagenCompra = findViewById(R.id.fotoCompra);
+        imagenFiesta = findViewById(R.id.fotoFiesta);
 //>---------------------------------Googgle-------------------------------------------------------->
         name = findViewById(R.id.name);
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -308,34 +318,43 @@ public class ComparteSocial extends AppCompatActivity implements
                 break;
 
             case R.id.fotoCompra:
-                Toast t_Cocina = new Toast(contexto);
-                t_Cocina.setText("Has pulsado en la compra");
-                t_Cocina.show();
+
                 btnComparte.setEnabled(true);
                 categoria = Categoría.COMPRA;
+                imagenCompra.setColorFilter(R.color.Communify_White);
+                imagenFiesta.setColorFilter(null);
+                imagenAbuelos.setColorFilter(null);
+                imagenAmigos.setColorFilter(null);
                 break;
 
             case R.id.fotoAbuelos:
-                Toast t_Bricolaje = new Toast(contexto);
-                t_Bricolaje.setText("Has pulsado en los abuelos");
-                t_Bricolaje.show();
+
                 btnComparte.setEnabled(true);
                 categoria = Categoría.PERSONAS_MAYORES;
+                imagenAmigos.setColorFilter(null);
+                imagenFiesta.setColorFilter(null);
+                imagenCompra.setColorFilter(null);
+                imagenAbuelos.setColorFilter(R.color.Communify_White);
+
                 break;
             case R.id.fotoAmigos:
-                Toast t_Jardin = new Toast(contexto);
-                t_Jardin.setText("Has pulsado en los amigos");
-                t_Jardin.show();
+
                 btnComparte.setEnabled(true);
                 categoria = Categoría.AMIGOS;
+                imagenCompra.setColorFilter(null);
+                imagenAbuelos.setColorFilter(null);
+                imagenFiesta.setColorFilter(null);
+                imagenAmigos.setColorFilter(R.color.Communify_White);
                 break;
 
             case R.id.fotoFiesta:
-                Toast t_Mecanica = new Toast(contexto);
-                t_Mecanica.setText("Has pulsado en la fiesta");
-                t_Mecanica.show();
+
                 btnComparte.setEnabled(true);
                 categoria = Categoría.FIESTA;
+                imagenFiesta.setColorFilter(R.color.Communify_White);
+                imagenCompra.setColorFilter(null);
+                imagenAmigos.setColorFilter(null);
+                imagenAbuelos.setColorFilter(null);
                 break;
 
             case R.id.chipHogar:

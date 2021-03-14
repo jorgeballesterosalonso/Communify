@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,6 +41,10 @@ public class ComparteHogar extends AppCompatActivity implements
     private GoogleSignInAccount account;
     private Button btnSolicita;
     private Categoría categoría;
+    private ImageView imagenCocina;
+    private ImageView imagenBricolaje;
+    private ImageView imagenJardin;
+    private ImageView imagenMecanica;
 
     LoginActivity loginCursor = new LoginActivity(); //Puebas objeto login, llamada de metodos
     Button btnComparte = null;
@@ -60,6 +65,10 @@ public class ComparteHogar extends AppCompatActivity implements
         btnComparte.setEnabled(false);
         btnSolicita = findViewById(R.id.buttonSolicita);
         btnSolicita.setEnabled(false);
+        imagenJardin = findViewById(R.id.fotoJardin);
+        imagenMecanica = findViewById(R.id.fotoMecanica);
+        imagenCocina = findViewById(R.id.fotoCocina);
+        imagenBricolaje = findViewById(R.id.fotoBricolaje);
 //>---------------------------------Googgle-------------------------------------------------------->
         name = findViewById(R.id.name);
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -322,35 +331,43 @@ public class ComparteHogar extends AppCompatActivity implements
                 break;
 
             case R.id.fotoCocina:
-                Toast t_Cocina = new Toast(contexto);
-                t_Cocina.setText("Has pulsado en la cocina");
-                t_Cocina.show();
+
                 btnComparte.setEnabled(true);
                 categoría = Categoría.COCINA;
+                imagenCocina.setColorFilter(R.color.Communify_White);
+                imagenBricolaje.setColorFilter(null);
+                imagenMecanica.setColorFilter(null);
+                imagenJardin.setColorFilter(null);
                 break;
 
             case R.id.fotoBricolaje:
-                Toast t_Bricolaje = new Toast(contexto);
-                t_Bricolaje.setText("Has pulsado en el bricolaje");
-                t_Bricolaje.show();
+
                 btnComparte.setEnabled(true);
                 btnComparte.setActivated(false);
                 categoría = Categoría.BRICOLAJE;
+                imagenBricolaje.setColorFilter(R.color.Communify_White);
+                imagenCocina.setColorFilter(null);
+                imagenMecanica.setColorFilter(null);
+                imagenJardin.setColorFilter(null);
                 break;
             case R.id.fotoJardin:
-                Toast t_Jardin = new Toast(contexto);
-                t_Jardin.setText("Has pulsado en el jardín");
-                t_Jardin.show();
+
                 btnComparte.setEnabled(false);
                 categoría = Categoría.JARDIN;
+                imagenJardin.setColorFilter(R.color.Communify_White);
+                imagenBricolaje.setColorFilter(null);
+                imagenMecanica.setColorFilter(null);
+                imagenCocina.setColorFilter(null);
                 break;
 
             case R.id.fotoMecanica:
-                Toast t_Mecanica = new Toast(contexto);
-                t_Mecanica.setText("Has pulsado en la mecánica");
-                t_Mecanica.show();
+
                 btnComparte.setEnabled(true);
                 categoría = Categoría.MECANICA;
+                imagenMecanica.setColorFilter(R.color.Communify_White);
+                imagenBricolaje.setColorFilter(null);
+                imagenCocina.setColorFilter(null);
+                imagenJardin.setColorFilter(null);
                 break;
 
             case R.id.chipHogar:
