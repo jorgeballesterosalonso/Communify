@@ -39,6 +39,7 @@ public class ComparteSocial extends AppCompatActivity implements
     private TextView name; //Pruebas de boton del modal
     private GoogleSignInAccount account;
     private Button btnSolicita;
+    private Categoría categoria;
 
     LoginActivity loginCursor = new LoginActivity(); //Puebas objeto login, llamada de metodos
     Button btnComparte = null;
@@ -187,7 +188,6 @@ public class ComparteSocial extends AppCompatActivity implements
     /**
      * @param item objetos declarado en menu_contex
      * @return devuele el metodo segun elboton seleccionado
-     * @see menu_contex.xml
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -298,7 +298,9 @@ public class ComparteSocial extends AppCompatActivity implements
         switch (v.getId()) {
 
             case R.id.buttonComparte:
-
+                Intent intent = new Intent(ComparteSocial.this, AniadirProducto.class);
+                intent.putExtra("categoría", categoria);
+                startActivity(intent);
                 break;
             case R.id.buttonSolicita:
                 Intent intentMaps = new Intent(ComparteSocial.this, MapsActivity.class);
@@ -310,6 +312,7 @@ public class ComparteSocial extends AppCompatActivity implements
                 t_Cocina.setText("Has pulsado en la compra");
                 t_Cocina.show();
                 btnComparte.setEnabled(true);
+                categoria = Categoría.COMPRA;
                 break;
 
             case R.id.fotoAbuelos:
@@ -317,13 +320,14 @@ public class ComparteSocial extends AppCompatActivity implements
                 t_Bricolaje.setText("Has pulsado en los abuelos");
                 t_Bricolaje.show();
                 btnComparte.setEnabled(true);
-                btnComparte.setActivated(false);
+                categoria = Categoría.PERSONAS_MAYORES;
                 break;
             case R.id.fotoAmigos:
                 Toast t_Jardin = new Toast(contexto);
                 t_Jardin.setText("Has pulsado en los amigos");
                 t_Jardin.show();
-                btnComparte.setEnabled(false);
+                btnComparte.setEnabled(true);
+                categoria = Categoría.AMIGOS;
                 break;
 
             case R.id.fotoFiesta:
@@ -331,6 +335,7 @@ public class ComparteSocial extends AppCompatActivity implements
                 t_Mecanica.setText("Has pulsado en la fiesta");
                 t_Mecanica.show();
                 btnComparte.setEnabled(true);
+                categoria = Categoría.FIESTA;
                 break;
 
             case R.id.chipHogar:
@@ -338,7 +343,9 @@ public class ComparteSocial extends AppCompatActivity implements
                 startActivity(intentHogar);
                 break;
             case R.id.chipSocial:
-
+                Toast t = new Toast(contexto);
+                t.setText("Ya estás en la sección de 'Social'");
+                t.show();
                 break;
             case R.id.chipOtros:
 

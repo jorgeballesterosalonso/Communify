@@ -12,7 +12,9 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class AniadirProducto extends AppCompatActivity {
+import java.io.Serializable;
+
+public class AniadirProducto extends AppCompatActivity implements Serializable {
     private ImageView imagen;
     private Context context;
     private Uri imageUri;
@@ -28,6 +30,7 @@ public class AniadirProducto extends AppCompatActivity {
         imagen = findViewById(R.id.imagenProducto);
         etTitulo = findViewById(R.id.etTitulo);
         etDescripcion = findViewById(R.id.DescripcionProducto);
+        Intent intent = getIntent();
 
         imagen.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,7 +48,8 @@ public class AniadirProducto extends AppCompatActivity {
         btnAniadir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Producto p = new Producto(etTitulo.getText().toString(), etDescripcion.getText().toString(), imageUri, true);
+                Producto p = new Producto(etTitulo.getText().toString(), etDescripcion.getText().toString(), imageUri, true, (Categoría) intent.getSerializableExtra("categoría"));
+                Log.d("TAG", p.toString());
             }
         });
     }

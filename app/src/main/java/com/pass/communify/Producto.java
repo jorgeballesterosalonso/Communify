@@ -2,20 +2,30 @@ package com.pass.communify;
 
 import android.net.Uri;
 
+import java.io.Serializable;
 
-public class Producto {
+
+public class Producto implements Serializable {
     private String titulo;
     private String descripcion;
     private Uri uri;
     private boolean esCompartido;
-    private Categoría categoría;
+    private Categoría categoria;
 
-    public Categoría getCategoría() {
-        return categoría;
+    public Producto(String titulo, String descripcion, Uri uri, boolean esCompartido, Categoría categoria) {
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.uri = uri;
+        this.esCompartido = esCompartido;
+        this.categoria = categoria;
     }
 
-    public void setCategoría(Categoría categoría) {
-        this.categoría = categoría;
+    public Categoría getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoría categoria) {
+        this.categoria = categoria;
     }
 
     public boolean isEsCompartido() {
@@ -39,6 +49,8 @@ public class Producto {
                 "titulo='" + titulo + '\'' +
                 ", descripcion='" + descripcion + '\'' +
                 ", uri=" + uri +
+                ", esCompartido=" + esCompartido +
+                ", categoria=" + categoria +
                 '}';
     }
 

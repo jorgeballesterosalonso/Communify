@@ -39,6 +39,7 @@ public class ComparteHogar extends AppCompatActivity implements
     private TextView name; //Pruebas de boton del modal
     private GoogleSignInAccount account;
     private Button btnSolicita;
+    private Categoría categoría;
 
     LoginActivity loginCursor = new LoginActivity(); //Puebas objeto login, llamada de metodos
     Button btnComparte = null;
@@ -208,8 +209,8 @@ public class ComparteHogar extends AppCompatActivity implements
             return true;
         }
         if (id == R.id.Close) {
-            Toast toast = Toast.makeText(this, "Cerrando aplicacion", Toast.LENGTH_LONG);
-            toast.show();
+            //Toast toast = Toast.makeText(this, "Cerrando aplicacion", Toast.LENGTH_LONG);
+            //toast.show();
             Intent intent = new Intent(Intent.ACTION_MAIN);
             intent.addCategory(Intent.CATEGORY_HOME);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -231,8 +232,8 @@ public class ComparteHogar extends AppCompatActivity implements
             return true;
         }
         if (id == R.id.compartir) {
-            Toast toast = Toast.makeText(this, "Compartir", Toast.LENGTH_LONG);
-            toast.show();
+            //Toast toast = Toast.makeText(this, "Compartir", Toast.LENGTH_LONG);
+            //toast.show();
 
 
             Intent compartir = new Intent(android.content.Intent.ACTION_SEND);
@@ -246,8 +247,8 @@ public class ComparteHogar extends AppCompatActivity implements
             return true;
         }
         if (id == R.id.chatbox) {
-            Toast toast = Toast.makeText(this, "ChatBox", Toast.LENGTH_LONG);
-            toast.show();
+            //Toast toast = Toast.makeText(this, "ChatBox", Toast.LENGTH_LONG);
+            //toast.show();
             //poner aqui el intent para el chatbox
             Intent intent = new Intent(ComparteHogar.this, ChatBot.class);
             startActivity(intent);
@@ -310,8 +311,10 @@ public class ComparteHogar extends AppCompatActivity implements
         switch (v.getId()) {
 
             case R.id.buttonComparte:
-                Intent intent = new Intent(ComparteHogar.this,AniadirProducto.class);
+                Intent intent = new Intent(ComparteHogar.this, AniadirProducto.class);
+                intent.putExtra("categoría", categoría);
                 startActivity(intent);
+
                 break;
             case R.id.buttonSolicita:
                 Intent intentMaps = new Intent(ComparteHogar.this, MapsActivity.class);
@@ -323,6 +326,7 @@ public class ComparteHogar extends AppCompatActivity implements
                 t_Cocina.setText("Has pulsado en la cocina");
                 t_Cocina.show();
                 btnComparte.setEnabled(true);
+                categoría = Categoría.COCINA;
                 break;
 
             case R.id.fotoBricolaje:
@@ -331,12 +335,14 @@ public class ComparteHogar extends AppCompatActivity implements
                 t_Bricolaje.show();
                 btnComparte.setEnabled(true);
                 btnComparte.setActivated(false);
+                categoría = Categoría.BRICOLAJE;
                 break;
             case R.id.fotoJardin:
                 Toast t_Jardin = new Toast(contexto);
                 t_Jardin.setText("Has pulsado en el jardín");
                 t_Jardin.show();
                 btnComparte.setEnabled(false);
+                categoría = Categoría.JARDIN;
                 break;
 
             case R.id.fotoMecanica:
@@ -344,19 +350,19 @@ public class ComparteHogar extends AppCompatActivity implements
                 t_Mecanica.setText("Has pulsado en la mecánica");
                 t_Mecanica.show();
                 btnComparte.setEnabled(true);
+                categoría = Categoría.MECANICA;
                 break;
 
             case R.id.chipHogar:
-
+                Toast t = new Toast(contexto);
+                t.setText("Ya estás en la pantalla de 'Hogar'");
+                t.show();
                 break;
             case R.id.chipSocial:
                 Intent intentSocial = new Intent(ComparteHogar.this, ComparteSocial.class);
                 startActivity(intentSocial);
                 break;
             case R.id.chipOtros:
-
-                break;
-            case R.id.chatbox:
 
                 break;
             case R.id.fab:
