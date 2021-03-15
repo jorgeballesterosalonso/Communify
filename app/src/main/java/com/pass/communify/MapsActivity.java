@@ -39,6 +39,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private Toast toast;
     private ProgressBar progressBar;
 
+
     @SuppressLint("WrongConstant")
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -57,6 +58,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             chequearPermisos();
 
     }
+
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -105,11 +107,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private void cambiarMapa(Double lat, Double longi) {
         LatLng posicionAct = new LatLng(lat, longi);
-        mMap.addMarker(new MarkerOptions().position(posicionAct).title("Tu ubicacion"));
+        mMap.addMarker(new MarkerOptions().position(posicionAct).title(LoginActivity.currentUser.getEmail()));
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(posicionAct, zoomLevel));
         toast.cancel();
         progressBar.setVisibility(View.INVISIBLE);
+        FirebaseConnection.grabarPosicion(LoginActivity.currentUser.getEmail(),posicionAct);
+        //FirebaseConnection.grabarPosicion(posicionAct);
+
 
 
     }
 }
+
+//https://play.google.com/store/apps/details?id=com.pass.communify

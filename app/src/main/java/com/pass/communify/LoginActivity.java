@@ -30,7 +30,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-
+////https://play.google.com/store/apps/details?id=com.pass.communify
 public class LoginActivity extends AppCompatActivity implements
         View.OnClickListener {
     private MaterialButton btn_Login;
@@ -40,7 +40,7 @@ public class LoginActivity extends AppCompatActivity implements
     private final String TAG = "SignInActivity";
     private final int RC_SIGN_IN = 9001;
     private TextView mStatusTextView;
-    private FirebaseUser currentUser;
+    public static FirebaseUser currentUser;
     private TextInputEditText correo;
     private TextInputEditText pass;
     private TextInputLayout layaout;
@@ -80,9 +80,8 @@ public class LoginActivity extends AppCompatActivity implements
         SignInButton signInButton = findViewById(R.id.sign_in_button);
         signInButton.setColorScheme(SignInButton.COLOR_LIGHT);
         //login manual
-        mAuth = FirebaseAuth.getInstance();
-        currentUser = mAuth.getCurrentUser();
-        this.currentUser = currentUser;
+
+
 
 
     }
@@ -94,10 +93,11 @@ public class LoginActivity extends AppCompatActivity implements
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+                            currentUser = mAuth.getCurrentUser();
+
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("prueba", "signInWithEmail:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            //updateUI(user);
+                            updateUIF(currentUser);
                             Intent intent = new Intent(LoginActivity.this, ComparteHogar.class);
                             startActivity(intent);
                         } else {
@@ -112,6 +112,26 @@ public class LoginActivity extends AppCompatActivity implements
                         // ...
                     }
                 });
+    }
+
+    private void updateUIF(FirebaseUser user) {
+        if (user != null) {
+            mStatusTextView.setText(getString(R.string.signed_in_fmt, user.getDisplayName()));
+            ((TextView) findViewById(R.id.status)).setText(R.string.signed_in);
+            findViewById(R.id.sign_in_button).setVisibility(View.GONE);
+            findViewById(R.id.disconnect_button).setVisibility(View.VISIBLE);
+            Log.d("TAG", currentUser.getEmail());
+            Intent intent = new Intent(LoginActivity.this, ComparteHogar.class);
+            startActivity(intent);
+
+        } else {
+            mStatusTextView.setText(R.string.signed_out);
+
+            findViewById(R.id.sign_in_button).setVisibility(View.VISIBLE);
+            findViewById(R.id.disconnect_button).setVisibility(View.GONE);
+            ((TextView) findViewById(R.id.status)).setText(R.string.signed_out);
+        }
+
     }
 
 //>---------------------------------Fin Normal----------------------------------------------------->
