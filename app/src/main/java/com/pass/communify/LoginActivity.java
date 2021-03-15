@@ -81,8 +81,7 @@ public class LoginActivity extends AppCompatActivity implements
         signInButton.setColorScheme(SignInButton.COLOR_LIGHT);
         //login manual
 
-        currentUser = mAuth.getCurrentUser();
-        this.currentUser = currentUser;
+
 
 
     }
@@ -94,9 +93,10 @@ public class LoginActivity extends AppCompatActivity implements
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+                            currentUser = mAuth.getCurrentUser();
+
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("prueba", "signInWithEmail:success");
-                            FirebaseUser currentUser = mAuth.getCurrentUser();
                             updateUIF(currentUser);
                             Intent intent = new Intent(LoginActivity.this, ComparteHogar.class);
                             startActivity(intent);

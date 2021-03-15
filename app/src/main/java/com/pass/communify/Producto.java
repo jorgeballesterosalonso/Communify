@@ -6,22 +6,17 @@ import com.google.android.gms.maps.model.LatLng;
 
 
 public class Producto {
-    private String nombreUsuario, email;
+    private String nombreUsuario;
+    private String email;
     private LatLng posicion;
     private Double lat;
     private String titulo;
     private String descripcion;
     private Uri uri;
 
-    public Producto(String nombreUsuario, LatLng posicion,Double lat ) {
+    public Producto(String nombreUsuario, LatLng posicion) {
         this.nombreUsuario = nombreUsuario;
         this.posicion = posicion;
-        this.lat = lat;
-    }
-
-
-
-    public Producto() {
     }
 
     public Producto(String titulo, String descripcion, Uri uri) {
@@ -29,16 +24,6 @@ public class Producto {
         this.descripcion = descripcion;
         this.uri = uri;
     }
-
-    public Producto(String nombreUsuario, String email, String titulo, String descripcion, Uri uri) {
-        this.nombreUsuario = nombreUsuario;
-        this.email = email;
-        this.titulo = titulo;
-        this.descripcion = descripcion;
-        this.uri = uri;
-
-    }
-
 
     public String getNombreUsuario() {
         return nombreUsuario;
@@ -54,6 +39,22 @@ public class Producto {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public LatLng getPosicion() {
+        return posicion;
+    }
+
+    public void setPosicion(LatLng posicion) {
+        this.posicion = posicion;
+    }
+
+    public Double getLat() {
+        return lat;
+    }
+
+    public void setLat(Double lat) {
+        this.lat = lat;
     }
 
     public String getTitulo() {
@@ -78,16 +79,5 @@ public class Producto {
 
     public void setUri(Uri uri) {
         this.uri = uri;
-    }
-
-    @Override
-    public String toString() {
-        return "Producto{" +
-                "nombreUsuario='" + nombreUsuario + '\'' +
-                ", email='" + email + '\'' +
-                ", titulo='" + titulo + '\'' +
-                ", descripcion='" + descripcion + '\'' +
-                ", uri=" + uri +
-                '}';
     }
 }

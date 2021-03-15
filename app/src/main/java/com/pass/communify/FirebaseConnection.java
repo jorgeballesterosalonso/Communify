@@ -10,15 +10,17 @@ import com.google.firebase.database.FirebaseDatabase;
 public class FirebaseConnection {
     private static final FirebaseDatabase database = FirebaseDatabase.getInstance("https://communify-78b34-default-rtdb.europe-west1.firebasedatabase.app/");
 
-    public static void grabarPosicion(String nombre, LatLng posicion) {
-        Log.d("TAG", nombre);
+    public static void grabarPosicion(String nombreUsuario, LatLng posicion) {
+        Log.d("TAG", nombreUsuario);
         Log.d("TAG", posicion.toString());
-        Double lat = Double.valueOf(posicion.toString());
-      
-        Producto c1 = new Producto(nombre,posicion,lat);
 
-        DatabaseReference myRef = database.getReference("Usuario");
+      
+        Producto c1 = new Producto(nombreUsuario, posicion);
+
+        DatabaseReference myRef = database.getReference("User").child(nombreUsuario.split("@")[0]+nombreUsuario.split("@")[1].replace('.',' '));
+
         myRef.push().setValue(c1);
+        //myRef.push().setValue(posicion);
 
     }
 }
