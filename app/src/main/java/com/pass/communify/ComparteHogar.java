@@ -40,7 +40,7 @@ public class ComparteHogar extends AppCompatActivity implements
     private TextView name; //Pruebas de boton del modal
     private GoogleSignInAccount account;
     private Button btnSolicita;
-    private Categoría categoría;
+    private Categoria categoria;
     private ImageView imagenCocina;
     private ImageView imagenBricolaje;
     private ImageView imagenJardin;
@@ -321,13 +321,13 @@ public class ComparteHogar extends AppCompatActivity implements
 
             case R.id.buttonComparte:
                 Intent intent = new Intent(ComparteHogar.this, AniadirProducto.class);
-                intent.putExtra("categoría", categoría);
+                intent.putExtra("categoría", categoria);
                 startActivity(intent);
 
                 break;
             case R.id.buttonSolicita:
                 Intent intentMaps = new Intent(ComparteHogar.this, MapsActivity.class);
-                intentMaps.putExtra("categoria", categoría);
+                intentMaps.putExtra("categoria", categoria);
                 startActivity(intentMaps);
                 break;
 
@@ -335,7 +335,7 @@ public class ComparteHogar extends AppCompatActivity implements
 
                 btnComparte.setEnabled(true);
                 btnSolicita.setEnabled(true);
-                categoría = Categoría.COCINA;
+                categoria = Categoria.COCINA;
                 imagenCocina.setColorFilter(R.color.Communify_White);
                 imagenBricolaje.setColorFilter(null);
                 imagenMecanica.setColorFilter(null);
@@ -346,7 +346,7 @@ public class ComparteHogar extends AppCompatActivity implements
 
                 btnComparte.setEnabled(true);
                 btnSolicita.setEnabled(true);
-                categoría = Categoría.BRICOLAJE;
+                categoria = Categoria.BRICOLAJE;
                 imagenBricolaje.setColorFilter(R.color.Communify_White);
                 imagenCocina.setColorFilter(null);
                 imagenMecanica.setColorFilter(null);
@@ -356,7 +356,7 @@ public class ComparteHogar extends AppCompatActivity implements
 
                 btnComparte.setEnabled(false);
                 btnSolicita.setEnabled(true);
-                categoría = Categoría.JARDIN;
+                categoria = Categoria.JARDIN;
                 imagenJardin.setColorFilter(R.color.Communify_White);
                 imagenBricolaje.setColorFilter(null);
                 imagenMecanica.setColorFilter(null);
@@ -367,7 +367,7 @@ public class ComparteHogar extends AppCompatActivity implements
 
                 btnComparte.setEnabled(true);
                 btnSolicita.setEnabled(true);
-                categoría = Categoría.MECANICA;
+                categoria = Categoria.MECANICA;
                 imagenMecanica.setColorFilter(R.color.Communify_White);
                 imagenBricolaje.setColorFilter(null);
                 imagenCocina.setColorFilter(null);

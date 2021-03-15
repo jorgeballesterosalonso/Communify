@@ -48,7 +48,7 @@ public class AniadirProducto extends AppCompatActivity implements Serializable {
         btnAniadir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Producto p = new Producto(etTitulo.getText().toString(), etDescripcion.getText().toString(), imageUri, true, (Categoría) intent.getSerializableExtra("categoría"));
+                Producto p = new Producto(etTitulo.getText().toString(), etDescripcion.getText().toString(), imageUri, true, (Categoria) intent.getSerializableExtra("categoría"));
                 Log.d("TAG", p.toString());
             }
         });

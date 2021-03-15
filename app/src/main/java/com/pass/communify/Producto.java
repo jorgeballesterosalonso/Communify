@@ -10,9 +10,9 @@ public class Producto implements Serializable {
     private String descripcion;
     private Uri uri;
     private boolean esCompartido;
-    private Categoría categoria;
+    private Categoria categoria;
 
-    public Producto(String titulo, String descripcion, Uri uri, boolean esCompartido, Categoría categoria) {
+    public Producto(String titulo, String descripcion, Uri uri, boolean esCompartido, Categoria categoria) {
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.uri = uri;
@@ -20,11 +20,11 @@ public class Producto implements Serializable {
         this.categoria = categoria;
     }
 
-    public Categoría getCategoria() {
+    public Categoria getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(Categoría categoria) {
+    public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
 

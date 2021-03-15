@@ -40,7 +40,7 @@ public class ComparteSocial extends AppCompatActivity implements
     private TextView name; //Pruebas de boton del modal
     private GoogleSignInAccount account;
     private Button btnSolicita;
-    private Categoría categoria;
+    private Categoria categoria;
     private ImageView imagenAbuelos;
     private ImageView imagenCompra;
     private ImageView imagenAmigos;
@@ -326,7 +326,7 @@ public class ComparteSocial extends AppCompatActivity implements
 
                 btnComparte.setEnabled(true);
                 btnSolicita.setEnabled(true);
-                categoria = Categoría.COMPRA;
+                categoria = Categoria.COMPRA;
                 imagenCompra.setColorFilter(R.color.Communify_White);
                 imagenFiesta.setColorFilter(null);
                 imagenAbuelos.setColorFilter(null);
@@ -337,7 +337,7 @@ public class ComparteSocial extends AppCompatActivity implements
 
                 btnComparte.setEnabled(true);
                 btnSolicita.setEnabled(true);
-                categoria = Categoría.PERSONAS_MAYORES;
+                categoria = Categoria.PERSONAS_MAYORES;
                 imagenAmigos.setColorFilter(null);
                 imagenFiesta.setColorFilter(null);
                 imagenCompra.setColorFilter(null);
@@ -348,7 +348,7 @@ public class ComparteSocial extends AppCompatActivity implements
 
                 btnComparte.setEnabled(true);
                 btnSolicita.setEnabled(true);
-                categoria = Categoría.AMIGOS;
+                categoria = Categoria.AMIGOS;
                 imagenCompra.setColorFilter(null);
                 imagenAbuelos.setColorFilter(null);
                 imagenFiesta.setColorFilter(null);
@@ -359,7 +359,7 @@ public class ComparteSocial extends AppCompatActivity implements
 
                 btnComparte.setEnabled(true);
                 btnSolicita.setEnabled(true);
-                categoria = Categoría.FIESTA;
+                categoria = Categoria.FIESTA;
                 imagenFiesta.setColorFilter(R.color.Communify_White);
                 imagenCompra.setColorFilter(null);
                 imagenAmigos.setColorFilter(null);
