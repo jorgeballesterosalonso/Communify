@@ -28,6 +28,11 @@ public class FirebaseConnection {
 
     }
 
+    public static void grabarObjeto(String userName, Producto p){
+        DatabaseReference referencia = database.getReference(userName);
+        referencia.push().setValue(p);
+    }
+
     public static void grabarFoto(Uri uri, String userName) {
         StorageReference storageRef = storage.getReference();
         UploadTask referenciaFoto = storageRef.child(userName + uri.toString()).putFile(uri);

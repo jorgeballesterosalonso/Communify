@@ -354,7 +354,7 @@ public class ComparteHogar extends AppCompatActivity implements
                 break;
             case R.id.fotoJardin:
 
-                btnComparte.setEnabled(false);
+                btnComparte.setEnabled(true);
                 btnSolicita.setEnabled(true);
                 categoria = Categoria.JARDIN;
                 imagenJardin.setColorFilter(R.color.Communify_White);

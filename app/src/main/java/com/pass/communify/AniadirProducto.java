@@ -60,6 +60,10 @@ public class AniadirProducto extends AppCompatActivity implements Serializable {
             @Override
             public void onClick(View v) {
 
+                LatLng ubicacion = new LatLng(0, 0);
+                Producto p = new Producto(LoginActivity.userEmail, ubicacion, etTitulo.getText().toString(), etDescripcion.getText().toString(), imageUri, (Categoria) intent.getSerializableExtra("categoria"));
+                FirebaseConnection.grabarObjeto(LoginActivity.userEmail, p);
+                FirebaseConnection.grabarFoto(p.getUri(),p.getEmail());
                 LocationListener oyente_localizaciones = new LocationListener() {
                     @Override
                     public void onLocationChanged(@NonNull Location location) {
