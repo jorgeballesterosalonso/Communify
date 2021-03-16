@@ -20,6 +20,9 @@
         app:showAsAction="withText" />
 
     <item
+        android:id="@+id/History"
+        android:title="@string/Historial" />
+    <item
 
         android:id="@+id/Close"
         android:title="Salir"
