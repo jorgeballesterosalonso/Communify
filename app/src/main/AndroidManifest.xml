@@ -28,6 +28,7 @@
             android:theme="@style/Theme.Communify"
             android:parentActivityName=".ComparteHogar">
             </activity>
+        <activity android:name=".ActivityVistaHistorial" />
         <activity android:name=".RegisterActivity" />
         <activity
             android:name=".LoginActivity"

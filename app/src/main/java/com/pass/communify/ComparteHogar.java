@@ -66,7 +66,6 @@ public class ComparteHogar extends AppCompatActivity implements
         //Inicializamos variables
 
 
-
         btnComparte = findViewById(R.id.buttonComparte);
         btnComparte.setEnabled(false);
         btnSolicita = findViewById(R.id.buttonSolicita);
@@ -270,8 +269,8 @@ public class ComparteHogar extends AppCompatActivity implements
             return true;
         }
 
-        if (id == R.id.History){
-            Intent intent = new Intent(ComparteHogar.this, MiAdaptador.class);
+        if (id == R.id.History) {
+            Intent intent = new Intent(ComparteHogar.this, ActivityVistaHistorial.class);
             startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
@@ -405,57 +404,5 @@ public class ComparteHogar extends AppCompatActivity implements
     }
 //<---------------------------------Modal----------------------------------------------------------<
 
-    private void ReciclerPrueba(){
-
-        Historial h1 = new Historial();
-        Historial h2 = new Historial();
-        Historial h3 = new Historial();
-        Historial h4 = new Historial();
-        Historial h5 = new Historial();
-        Historial h6 = new Historial();
-
-        //True, solicitado. False, enviado
-        h1.setSolicitadoenviado("Solicitado");
-        h1.setProducto("Taladradora eléctrica");
-        h1.setFoto(R.drawable.fotobricolaje);
-        h1.setCalificacion((float) 4.5);
-        h2.setSolicitadoenviado("Solicitado");
-        h2.setProducto("Termomix");
-        h2.setFoto(R.drawable.fondococina);
-        h2.setCalificacion((float) 3.5);
-        h3.setSolicitadoenviado("Enviado");
-        h3.setProducto("Cafetera Cetotec");
-        h3.setFoto(R.drawable.fondococina);
-        h3.setCalificacion((float) 5.0);
-        h4.setSolicitadoenviado("Enviado");
-        h4.setProducto("Cortacesped manual");
-        h4.setFoto(R.drawable.fotojardin);
-        h4.setCalificacion((float) 4.0);
-        h5.setSolicitadoenviado("Solicitado");
-        h5.setProducto("Salir por el barrio");
-        h5.setFoto(R.drawable.fotofiesta);
-        h5.setCalificacion((float) 2.5);
-        h6.setSolicitadoenviado("Enviado");
-        h6.setProducto("Maletín de arrancado");
-        h6.setFoto(R.drawable.fotomecanica);
-        h6.setCalificacion((float) 5.0);
-
-
-        ArrayList<Historial> Listahistorial = new ArrayList<>();
-
-        Listahistorial.add(h1);
-        Listahistorial.add(h2);
-        Listahistorial.add(h3);
-        Listahistorial.add(h4);
-        Listahistorial.add(h5);
-        Listahistorial.add(h6);
-
-
-        RecyclerView recy = findViewById(R.id.recycler);
-        RecyclerView.LayoutManager gestor = new LinearLayoutManager(this);
-        MiAdaptador adaptador = new MiAdaptador(Listahistorial);
-        recy.setLayoutManager(gestor);
-        recy.setAdapter(adaptador);
-    }
 
 }
