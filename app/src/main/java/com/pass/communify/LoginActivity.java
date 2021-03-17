@@ -1,19 +1,16 @@
 package com.pass.communify;
 
-import androidx.annotation.DrawableRes;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -44,6 +41,8 @@ public class LoginActivity extends AppCompatActivity implements
     private TextInputEditText correo;
     private TextInputEditText pass;
     private TextInputLayout layaout;
+    public static String userEmail;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +56,6 @@ public class LoginActivity extends AppCompatActivity implements
         btn_Login = findViewById(R.id.btn_login);
         correo = findViewById(R.id.ti_correo);
         pass = findViewById(R.id.ti_pass);
-
 
 
         //Configuracion de login con Google.
@@ -82,8 +80,6 @@ public class LoginActivity extends AppCompatActivity implements
         //login manual
 
 
-
-
     }
 
     //<---------------------------------Login Normal---------------------------------------------------<
@@ -94,7 +90,7 @@ public class LoginActivity extends AppCompatActivity implements
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             currentUser = mAuth.getCurrentUser();
-
+                            userEmail = email;
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("prueba", "signInWithEmail:success");
                             updateUIF(currentUser);
@@ -227,6 +223,7 @@ public class LoginActivity extends AppCompatActivity implements
     //Comprueba si estas conectado
     public void updateUI(@Nullable GoogleSignInAccount account) {
         if (account != null) {
+            userEmail = account.getEmail();
             mStatusTextView.setText(getString(R.string.signed_in_fmt, account.getDisplayName()));
             ((TextView) findViewById(R.id.status)).setText(R.string.signed_in);
             findViewById(R.id.sign_in_button).setVisibility(View.GONE);

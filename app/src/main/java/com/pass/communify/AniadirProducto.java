@@ -2,6 +2,7 @@ package com.pass.communify;
 
 import android.content.Context;
 import android.content.Intent;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,9 +13,9 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.io.Serializable;
+import com.google.android.gms.maps.model.LatLng;
 
-public class AniadirProducto extends AppCompatActivity implements Serializable {
+public class AniadirProducto extends AppCompatActivity {
     private ImageView imagen;
     private Context context;
     private Uri imageUri;
@@ -22,9 +23,11 @@ public class AniadirProducto extends AppCompatActivity implements Serializable {
     private EditText etTitulo;
     private EditText etDescripcion;
     private String categoría;
+    private LocationManager lm = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aniadir_producto);
         imagen = findViewById(R.id.imagenProducto);
@@ -40,16 +43,17 @@ public class AniadirProducto extends AppCompatActivity implements Serializable {
                         Intent.ACTION_PICK,
                         android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(galleryIntent, 0);
-
-
             }
         });
         btnAniadir = findViewById(R.id.btnAniadir);
         btnAniadir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Producto p = new Producto(etTitulo.getText().toString(), etDescripcion.getText().toString(), imageUri, true, (Categoria) intent.getSerializableExtra("categoría"));
-                Log.d("TAG", p.toString());
+
+                LatLng ubicacion = new LatLng(0, 0);
+                Producto p = new Producto(LoginActivity.userEmail, ubicacion, etTitulo.getText().toString(), etDescripcion.getText().toString(), imageUri.toString(),(Categoria) intent.getSerializableExtra("categoría"));
+                FirebaseConnection.grabarObjeto(LoginActivity.userEmail, p);
+                FirebaseConnection.grabarFoto(Uri.parse(p.getUri()), p.getEmail());
             }
         });
     }

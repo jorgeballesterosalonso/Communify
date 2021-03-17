@@ -1,10 +1,8 @@
 package com.pass.communify;
 
-import android.net.Uri;
-
-import java.io.Serializable;
 import com.google.android.gms.maps.model.LatLng;
 
+import java.io.Serializable;
 
 
 public class Producto implements Serializable {
@@ -15,15 +13,24 @@ public class Producto implements Serializable {
     private Double lat;
     private String titulo;
     private String descripcion;
-    private Uri uri;
-    private boolean esCompartido;
+    private String uri;
     private Categoria categoria;
 
-    public Producto(String titulo, String descripcion, Uri uri, boolean esCompartido, Categoria categoria) {
+
+    public Producto(String email, LatLng posicion, String titulo, String descripcion, String uri, Categoria categoria) {
+        this.email = email;
+        this.posicion = posicion;
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.uri = uri;
-        this.esCompartido = esCompartido;
+        this.categoria = categoria;
+
+    }
+
+    public Producto(String titulo, String descripcion, String uri, Categoria categoria) {
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.uri = uri;
         this.categoria = categoria;
     }
 
@@ -35,16 +42,13 @@ public class Producto implements Serializable {
         this.categoria = categoria;
     }
 
-    public boolean isEsCompartido() {
-        return esCompartido;
-    }
 
     public Producto(String nombreUsuario, LatLng posicion) {
         this.nombreUsuario = nombreUsuario;
         this.posicion = posicion;
     }
 
-    public Producto(String titulo, String descripcion, Uri uri) {
+    public Producto(String titulo, String descripcion, String uri) {
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.uri = uri;
@@ -98,11 +102,11 @@ public class Producto implements Serializable {
         this.descripcion = descripcion;
     }
 
-    public Uri getUri() {
+    public String getUri() {
         return uri;
     }
 
-    public void setUri(Uri uri) {
+    public void setUri(String uri) {
         this.uri = uri;
     }
 }
