@@ -16,6 +16,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -25,6 +27,8 @@ import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.ArrayList;
 
 /**
  * Esta es la clase
@@ -60,6 +64,7 @@ public class ComparteHogar extends AppCompatActivity implements
         setContentView(R.layout.activity_comparte_hogar);
 
         //Inicializamos variables
+
 
         btnComparte = findViewById(R.id.buttonComparte);
         btnComparte.setEnabled(false);
@@ -263,6 +268,11 @@ public class ComparteHogar extends AppCompatActivity implements
             startActivity(intent);
             return true;
         }
+
+        if (id == R.id.History) {
+            Intent intent = new Intent(ComparteHogar.this, ActivityVistaHistorial.class);
+            startActivity(intent);
+        }
         return super.onOptionsItemSelected(item);
     }
 //<---------------------------------Menu AppBa-----------------------------------------------------<
@@ -393,4 +403,6 @@ public class ComparteHogar extends AppCompatActivity implements
         }
     }
 //<---------------------------------Modal----------------------------------------------------------<
+
+
 }

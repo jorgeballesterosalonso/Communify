@@ -16,6 +16,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -25,6 +27,8 @@ import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.ArrayList;
 
 /**
  * Esta es la clase
@@ -225,6 +229,10 @@ public class ComparteSocial extends AppCompatActivity implements
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
         }
+        if (id == R.id.History){
+            Intent intent = new Intent(ComparteSocial.this, ActivityVistaHistorial.class);
+            startActivity(intent);
+        }
 
         if (id == R.id.user) {
 
@@ -384,5 +392,6 @@ public class ComparteSocial extends AppCompatActivity implements
                 break;
         }
     }
+
 //<---------------------------------Modal----------------------------------------------------------<
 }
