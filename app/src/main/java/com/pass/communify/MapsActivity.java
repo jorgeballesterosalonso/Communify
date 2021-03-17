@@ -3,6 +3,7 @@ package com.pass.communify;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
@@ -30,6 +31,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import java.util.List;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -84,6 +87,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             return;
         }
         lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 10, 0, oyente_localizaciones);
+
+
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -106,6 +111,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     private void cambiarMapa(Double lat, Double longi) {
+        if (true /*new Intent().getSerializableExtra("categoría") != null*/){
+            List<Producto> listaProductos = FirebaseConnection.obtenerProductosFirebase("");
+            Log.d("TAG",listaProductos.toString());
+            for (Producto p : listaProductos){
+                mMap.addMarker(new MarkerOptions().position(p.getPosicion()).title(p.getTitulo()));
+            }
+        }
+
         LatLng posicionAct = new LatLng(lat, longi);
         mMap.addMarker(new MarkerOptions().position(posicionAct).title(LoginActivity.currentUser.getEmail()));
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(posicionAct, zoomLevel));

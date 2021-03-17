@@ -16,6 +16,8 @@ public class Producto implements Serializable {
     private String uri;
     private Categoria categoria;
 
+    public Producto() {
+    }
 
     public Producto(String email, LatLng posicion, String titulo, String descripcion, String uri, Categoria categoria) {
         this.email = email;
