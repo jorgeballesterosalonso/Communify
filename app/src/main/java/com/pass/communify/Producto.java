@@ -15,33 +15,33 @@ public class Producto implements Serializable {
     private Double lat;
     private String titulo;
     private String descripcion;
-    private Uri uri;
-    private Categoria categoria;
+    private String uri;
+    //private Categoria categoria;
 
 
-    public Producto(String email, LatLng posicion, String titulo, String descripcion, Uri uri, Categoria categoria) {
+    public Producto(String email, LatLng posicion, String titulo, String descripcion, String uri) {
         this.email = email;
         this.posicion = posicion;
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.uri = uri;
-        this.categoria = categoria;
+
     }
 
-    public Producto(String titulo, String descripcion, Uri uri, Categoria categoria) {
+    public Producto(String titulo, String descripcion, String uri, Categoria categoria) {
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.uri = uri;
-        this.categoria = categoria;
+        //this.categoria = categoria;
     }
 
-    public Categoria getCategoria() {
-        return categoria;
-    }
+    //public Categoria getCategoria() {
+    // return categoria;
+    // }
 
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
-    }
+    //public void setCategoria(Categoria categoria) {
+    //  this.categoria = categoria;
+    // }
 
 
     public Producto(String nombreUsuario, LatLng posicion) {
@@ -49,7 +49,7 @@ public class Producto implements Serializable {
         this.posicion = posicion;
     }
 
-    public Producto(String titulo, String descripcion, Uri uri) {
+    public Producto(String titulo, String descripcion, String uri) {
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.uri = uri;
@@ -103,11 +103,11 @@ public class Producto implements Serializable {
         this.descripcion = descripcion;
     }
 
-    public Uri getUri() {
+    public String getUri() {
         return uri;
     }
 
-    public void setUri(Uri uri) {
+    public void setUri(String uri) {
         this.uri = uri;
     }
 }

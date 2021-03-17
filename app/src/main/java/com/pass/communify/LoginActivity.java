@@ -223,6 +223,7 @@ public class LoginActivity extends AppCompatActivity implements
     //Comprueba si estas conectado
     public void updateUI(@Nullable GoogleSignInAccount account) {
         if (account != null) {
+            userEmail = account.getEmail();
             mStatusTextView.setText(getString(R.string.signed_in_fmt, account.getDisplayName()));
             ((TextView) findViewById(R.id.status)).setText(R.string.signed_in);
             findViewById(R.id.sign_in_button).setVisibility(View.GONE);
