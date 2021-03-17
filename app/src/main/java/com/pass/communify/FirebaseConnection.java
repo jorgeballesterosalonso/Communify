@@ -17,6 +17,7 @@ public class FirebaseConnection {
     private static final FirebaseStorage storage = FirebaseStorage.getInstance("gs://communify-392d2.appspot.com");
 
     public static void grabarPosicion(String nombreUsuario, LatLng posicion) {
+
         Log.d("TAG", nombreUsuario);
         Log.d("TAG", posicion.toString());
 
@@ -31,12 +32,15 @@ public class FirebaseConnection {
     }
 
     public static void grabarObjeto(String userName, Producto p){
+        FirebaseDatabase database = FirebaseDatabase.getInstance("https://communify-392d2-default-rtdb.firebaseio.com/");
+
         Log.d("TAG","Grabando Objeto...");
         DatabaseReference referencia = database.getReference("Objeto").child(userName.replace('@',' ').replace('.',' '));
         referencia.push().setValue(p);
     }
 
     public static void grabarFoto(Uri uri, String userName) {
+        FirebaseStorage storage = FirebaseStorage.getInstance("gs://communify-392d2.appspot.com");
         Log.d("TAG","Grabando foto...");
         StorageReference storageRef = storage.getReference();
         UploadTask referenciaFoto = storageRef.child(userName + uri.toString()).putFile(uri);

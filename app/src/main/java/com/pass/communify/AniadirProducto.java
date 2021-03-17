@@ -43,8 +43,6 @@ public class AniadirProducto extends AppCompatActivity {
                         Intent.ACTION_PICK,
                         android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(galleryIntent, 0);
-
-
             }
         });
         btnAniadir = findViewById(R.id.btnAniadir);
@@ -53,7 +51,7 @@ public class AniadirProducto extends AppCompatActivity {
             public void onClick(View v) {
 
                 LatLng ubicacion = new LatLng(0, 0);
-                Producto p = new Producto(LoginActivity.userEmail, ubicacion, etTitulo.getText().toString(), etDescripcion.getText().toString(), imageUri.toString());
+                Producto p = new Producto(LoginActivity.userEmail, ubicacion, etTitulo.getText().toString(), etDescripcion.getText().toString(), imageUri.toString(),(Categoria) intent.getSerializableExtra("categoría"));
                 FirebaseConnection.grabarObjeto(LoginActivity.userEmail, p);
                 FirebaseConnection.grabarFoto(Uri.parse(p.getUri()), p.getEmail());
             }

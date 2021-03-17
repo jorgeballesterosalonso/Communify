@@ -1,7 +1,5 @@
 package com.pass.communify;
 
-import android.net.Uri;
-
 import com.google.android.gms.maps.model.LatLng;
 
 import java.io.Serializable;
@@ -16,15 +14,16 @@ public class Producto implements Serializable {
     private String titulo;
     private String descripcion;
     private String uri;
-    //private Categoria categoria;
+    private Categoria categoria;
 
 
-    public Producto(String email, LatLng posicion, String titulo, String descripcion, String uri) {
+    public Producto(String email, LatLng posicion, String titulo, String descripcion, String uri, Categoria categoria) {
         this.email = email;
         this.posicion = posicion;
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.uri = uri;
+        this.categoria = categoria;
 
     }
 
@@ -32,16 +31,16 @@ public class Producto implements Serializable {
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.uri = uri;
-        //this.categoria = categoria;
+        this.categoria = categoria;
     }
 
-    //public Categoria getCategoria() {
-    // return categoria;
-    // }
+    public Categoria getCategoria() {
+        return categoria;
+    }
 
-    //public void setCategoria(Categoria categoria) {
-    //  this.categoria = categoria;
-    // }
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
 
 
     public Producto(String nombreUsuario, LatLng posicion) {
