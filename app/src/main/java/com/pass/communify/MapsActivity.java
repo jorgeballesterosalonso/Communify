@@ -31,13 +31,16 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+import java.util.ArrayList;
+
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, FirebaseConnection.iRecuperarDatos {
 
     private GoogleMap mMap;
-    private int zoomLevel = 13; //De 0 a 21, 0 max zoom
+    private int zoomLevel = 8; //De 0 a 21, 0 max zoom
     LocationManager lm = null;
     private Toast toast;
     private ProgressBar progressBar;
+    FirebaseConnection.iRecuperarDatos interfaz_recuperarDatos = this;
 
 
     @SuppressLint("WrongConstant")
@@ -47,6 +50,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
         progressBar = findViewById(R.id.progressBar);
+        FirebaseConnection.pedirUsuariosFirebase(interfaz_recuperarDatos);
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
@@ -111,10 +115,26 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(posicionAct, zoomLevel));
         toast.cancel();
         progressBar.setVisibility(View.INVISIBLE);
-        FirebaseConnection.grabarPosicion(LoginActivity.currentUser.getEmail(),posicionAct);
+        Posiciones p = new Posiciones(lat,longi);
+
+        FirebaseConnection.grabarPosicion(LoginActivity.currentUser.getEmail(),p);
         //FirebaseConnection.grabarPosicion(posicionAct);
 
 
+
+    }
+
+
+
+
+
+    @Override
+    public void recuperarUsuarios(ArrayList<Producto> lista_usuarios) {
+        Log.d("DESDE MAIN", lista_usuarios.toString());
+        for (Producto i:lista_usuarios) {
+            LatLng pos = new LatLng(i.getcPosiciones().getLat(), i.getcPosiciones().getLng());
+            mMap.addMarker(new MarkerOptions().position(pos).title(i.getNombreUsuario()));
+        }
 
     }
 }

@@ -51,9 +51,9 @@ public class AniadirProducto extends AppCompatActivity {
             public void onClick(View v) {
 
                 LatLng ubicacion = new LatLng(0, 0);
-                Producto p = new Producto(LoginActivity.userEmail, ubicacion, etTitulo.getText().toString(), etDescripcion.getText().toString(), imageUri.toString(),(Categoria) intent.getSerializableExtra("categoría"));
-                FirebaseConnection.grabarObjeto(LoginActivity.userEmail, p);
-                FirebaseConnection.grabarFoto(Uri.parse(p.getUri()), p.getEmail());
+               // Producto p = new Producto(LoginActivity.userEmail, ubicacion, etTitulo.getText().toString(), etDescripcion.getText().toString(), imageUri.toString(),(Categoria) intent.getSerializableExtra("categoría"));
+               // FirebaseConnection.grabarObjeto(LoginActivity.userEmail, p);
+                //FirebaseConnection.grabarFoto(Uri.parse(p.getUri()), p.getEmail());
             }
         });
     }
